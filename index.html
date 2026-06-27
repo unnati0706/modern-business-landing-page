@@ -1,13 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Modern Business Landing Page - Empowering Your Business Growth">
-    <title>Modern Business Landing Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>NovaTech - AI-Powered Business Solutions | Automate Your Work</title>
+    <meta name="title" content="NovaTech - AI-Powered Business Solutions | Automate Your Work">
+    <meta name="description" content="NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions. Trusted by 500+ businesses worldwide.">
+    <meta name="keywords" content="AI automation, business solutions, workflow automation, productivity, cloud services, web development, mobile apps">
+    <meta name="author" content="NovaTech">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://novatech.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://novatech.com/">
+    <meta property="og:title" content="NovaTech - AI-Powered Business Solutions">
+    <meta property="og:description" content="NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions.">
+    <meta property="og:image" content="https://novatech.com/images/og-image.png">
+    <meta property="og:site_name" content="NovaTech">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://novatech.com/">
+    <meta property="twitter:title" content="NovaTech - AI-Powered Business Solutions">
+    <meta property="twitter:description" content="NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions.">
+    <meta property="twitter:image" content="https://novatech.com/images/og-image.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader" aria-hidden="true">
+        <div class="loader__content">
+            <span class="loader__logo">NovaTech</span>
+            <div class="loader__bar">
+                <div class="loader__progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <span class="back-to-top__icon" aria-hidden="true">&#8593;</span>
+    </button>
 
     <!-- Header -->
     <header id="header" class="header">
@@ -27,6 +81,17 @@
             <a href="#contact" class="btn btn--primary nav__cta">Get Started</a>
 
             <button
+                id="theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Toggle dark mode"
+                title="Toggle dark mode"
+            >
+                <span class="theme-toggle__icon theme-toggle__icon--light" aria-hidden="true">&#9788;</span>
+                <span class="theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true">&#9790;</span>
+            </button>
+
+            <button
                 id="hamburger"
                 class="hamburger"
                 type="button"
@@ -42,7 +107,7 @@
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
 
         <!-- Hero Section -->
         <section id="hero" class="hero">
@@ -90,6 +155,7 @@
                     <div class="hero__image-wrapper">
                         <img
                             src="images/hero-dashboard.png"
+                            data-lazy="images/hero-dashboard.png"
                             alt="NovaTech AI dashboard showing workflow automation metrics and analytics"
                             class="hero__image"
                             width="580"
@@ -146,7 +212,7 @@
         </section>
 
         <!-- Services -->
-        <section id="services" class="services" aria-labelledby="services-heading">
+        <section id="services" class="services" aria-labelledby="services-heading" data-reveal="fade-up">
             <div class="container">
                 <h2 id="services-heading" class="section__title">Our Services</h2>
                 <p class="section__subtitle">We provide end-to-end digital solutions that help businesses innovate, scale, and succeed in today's competitive landscape.</p>
@@ -222,95 +288,235 @@
         </section>
 
         <!-- About Us -->
-        <section id="about" class="about">
+        <section id="about" class="about" aria-labelledby="about-heading">
             <div class="container about__container">
-                <div class="about__image">
-                    <img src="images/about-image.png" alt="Our team collaborating in a modern office" width="500" height="400">
+                <div class="about__visual">
+                    <div class="about__image-wrapper">
+                        <div class="about__image-bg" aria-hidden="true"></div>
+                        <img
+                            src="images/about-team.png"
+                            alt="NovaTech team collaborating on innovative technology solutions in a modern workspace"
+                            class="about__image"
+                            width="520"
+                            height="440"
+                        >
+                        <div class="about__experience-badge" aria-label="10 years of experience">
+                            <span class="about__experience-number">10+</span>
+                            <span class="about__experience-text">Years Experience</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about__content">
-                    <h2 class="section__title">About Us</h2>
-                    <p class="about__text">We are a team of passionate developers, designers, and strategists dedicated to helping businesses succeed in the digital age.</p>
-                    <p class="about__text">With over a decade of experience, we've helped hundreds of companies transform their ideas into successful products.</p>
-                    <a href="#contact" class="btn btn--primary">Learn More</a>
+                    <span class="about__subtitle">About Us</span>
+                    <h2 id="about-heading" class="about__title">Empowering Businesses Through Smart Technology</h2>
+                    <p class="about__description">At NovaTech, we believe technology should work for you, not against you. Our team of expert developers, designers, and strategists combines deep technical expertise with a customer-first approach to deliver solutions that drive real results.</p>
+                    <p class="about__description">With over a decade of experience serving businesses across industries, we've mastered the art of transforming complex challenges into elegant, scalable solutions. Our commitment to innovation and excellence has earned the trust of 500+ companies worldwide.</p>
+                    <ul class="about__features" role="list">
+                        <li class="about__feature">
+                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
+                            <span class="about__feature-text">Expert Development Team</span>
+                        </li>
+                        <li class="about__feature">
+                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
+                            <span class="about__feature-text">AI-Powered Solutions</span>
+                        </li>
+                        <li class="about__feature">
+                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
+                            <span class="about__feature-text">Secure &amp; Scalable Platforms</span>
+                        </li>
+                        <li class="about__feature">
+                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
+                            <span class="about__feature-text">24/7 Customer Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary about__cta">
+                        Learn More
+                        <span class="about__cta-arrow" aria-hidden="true">&#8594;</span>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Why Choose Us -->
-        <section id="why-choose-us" class="features">
+        <section id="why-choose-us" class="features" aria-labelledby="features-heading" data-reveal="fade-up">
             <div class="container">
-                <h2 class="section__title">Why Choose Us</h2>
-                <p class="section__subtitle">What sets us apart from the competition</p>
-                <div class="features__grid">
-                    <article class="feature">
-                        <h3 class="feature__title">Expert Team</h3>
-                        <p class="feature__description">Our experienced professionals bring deep expertise to every project.</p>
+                <h2 id="features-heading" class="section__title">Why Choose NovaTech</h2>
+                <p class="section__subtitle">We combine innovation, technology, and expertise to help businesses grow faster.</p>
+                <div class="features__grid" role="list">
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <span class="feature-card__icon-symbol">&#128104;&#8205;&#128187;</span>
+                        </div>
+                        <h3 class="feature-card__title">Expert Team</h3>
+                        <p class="feature-card__description">Our senior developers and architects bring 10+ years of combined experience to every project, ensuring enterprise-grade solutions.</p>
                     </article>
-                    <article class="feature">
-                        <h3 class="feature__title">Quality First</h3>
-                        <p class="feature__description">We never compromise on quality and follow industry best practices.</p>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <span class="feature-card__icon-symbol">&#129302;</span>
+                        </div>
+                        <h3 class="feature-card__title">AI Automation</h3>
+                        <p class="feature-card__description">Leverage intelligent workflows and machine learning to automate repetitive tasks, reducing operational costs by up to 40%.</p>
                     </article>
-                    <article class="feature">
-                        <h3 class="feature__title">24/7 Support</h3>
-                        <p class="feature__description">Round-the-clock support to keep your business running smoothly.</p>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <span class="feature-card__icon-symbol">&#9201;&#65039;</span>
+                        </div>
+                        <h3 class="feature-card__title">Fast Delivery</h3>
+                        <p class="feature-card__description">Agile methodology and dedicated sprints ensure on-time delivery without compromising quality or attention to detail.</p>
                     </article>
-                    <article class="feature">
-                        <h3 class="feature__title">Fast Delivery</h3>
-                        <p class="feature__description">Agile development process ensures timely project completion.</p>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <span class="feature-card__icon-symbol">&#128274;</span>
+                        </div>
+                        <h3 class="feature-card__title">Secure Platform</h3>
+                        <p class="feature-card__description">SOC 2 compliant infrastructure with end-to-end encryption, regular security audits, and GDPR-ready data handling.</p>
+                    </article>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <span class="feature-card__icon-symbol">&#128222;</span>
+                        </div>
+                        <h3 class="feature-card__title">24/7 Support</h3>
+                        <p class="feature-card__description">Round-the-clock technical support with dedicated account managers and guaranteed response times under 2 hours.</p>
+                    </article>
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <span class="feature-card__icon-symbol">&#128200;</span>
+                        </div>
+                        <h3 class="feature-card__title">Scalable Solutions</h3>
+                        <p class="feature-card__description">Cloud-native architecture that grows with your business, supporting 10x traffic spikes without performance degradation.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- Statistics -->
-        <section id="statistics" class="stats">
-            <div class="container stats__container">
-                <div class="stat">
-                    <span class="stat__number">500+</span>
-                    <span class="stat__label">Projects Completed</span>
-                </div>
-                <div class="stat">
-                    <span class="stat__number">150+</span>
-                    <span class="stat__label">Happy Clients</span>
-                </div>
-                <div class="stat">
-                    <span class="stat__number">50+</span>
-                    <span class="stat__label">Team Members</span>
-                </div>
-                <div class="stat">
-                    <span class="stat__number">10+</span>
-                    <span class="stat__label">Years Experience</span>
+        <section id="statistics" class="stats" aria-labelledby="stats-heading" data-reveal="zoom-in">
+            <div class="container">
+                <h2 id="stats-heading" class="section__title">Our Impact in Numbers</h2>
+                <p class="section__subtitle">Helping businesses worldwide through innovation and technology.</p>
+                <div class="stats__grid" role="list">
+                    <article class="stat-card" role="listitem">
+                        <div class="stat-card__icon" aria-hidden="true">
+                            <span class="stat-card__icon-symbol">&#128196;</span>
+                        </div>
+                        <span class="stat-card__number" data-target="500" data-suffix="+">0</span>
+                        <span class="stat-card__label">Projects Completed</span>
+                    </article>
+                    <article class="stat-card" role="listitem">
+                        <div class="stat-card__icon" aria-hidden="true">
+                            <span class="stat-card__icon-symbol">&#128522;</span>
+                        </div>
+                        <span class="stat-card__number" data-target="250" data-suffix="+">0</span>
+                        <span class="stat-card__label">Happy Clients</span>
+                    </article>
+                    <article class="stat-card" role="listitem">
+                        <div class="stat-card__icon" aria-hidden="true">
+                            <span class="stat-card__icon-symbol">&#127758;</span>
+                        </div>
+                        <span class="stat-card__number" data-target="20" data-suffix="+">0</span>
+                        <span class="stat-card__label">Countries Served</span>
+                    </article>
+                    <article class="stat-card" role="listitem">
+                        <div class="stat-card__icon" aria-hidden="true">
+                            <span class="stat-card__icon-symbol">&#11088;</span>
+                        </div>
+                        <span class="stat-card__number" data-target="99" data-suffix="%">0</span>
+                        <span class="stat-card__label">Client Satisfaction</span>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials -->
-        <section id="testimonials" class="testimonials">
+        <section id="testimonials" class="testimonials" aria-labelledby="testimonials-heading" data-reveal="fade-left">
             <div class="container">
-                <h2 class="section__title">What Our Clients Say</h2>
-                <p class="section__subtitle">Success stories from businesses we've helped</p>
-                <div class="testimonials__grid">
-                    <article class="testimonial">
-                        <blockquote class="testimonial__quote">
-                            <p>"This team transformed our business. Their expertise and dedication delivered results beyond our expectations."</p>
+                <h2 id="testimonials-heading" class="section__title">What Our Clients Say</h2>
+                <p class="section__subtitle">See how businesses around the world have grown with NovaTech.</p>
+                <div class="testimonials__grid" role="list">
+                    <article class="testimonial-card" role="listitem">
+                        <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            <p>"NovaTech transformed our workflow and helped us scale faster than ever."</p>
                         </blockquote>
-                        <div class="testimonial__author">
-                            <img src="images/client-1.png" alt="Sarah Johnson" width="50" height="50" class="testimonial__avatar">
-                            <div class="testimonial__info">
-                                <cite class="testimonial__name">Sarah Johnson</cite>
-                                <span class="testimonial__role">CEO, TechCorp</span>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar-wrapper">
+                                <img
+                                    src="images/client-sarah.png"
+                                    data-lazy="images/client-sarah.png"
+                                    alt="Sarah Johnson, CEO of TechWave"
+                                    class="testimonial-card__avatar"
+                                    width="56"
+                                    height="56"
+                                >
+                            </div>
+                            <div class="testimonial-card__info">
+                                <cite class="testimonial-card__name">Sarah Johnson</cite>
+                                <span class="testimonial-card__role">CEO</span>
+                                <span class="testimonial-card__company">TechWave</span>
                             </div>
                         </div>
                     </article>
-                    <article class="testimonial">
-                        <blockquote class="testimonial__quote">
-                            <p>"Professional, responsive, and incredibly talented. They helped us launch our product on time and under budget."</p>
+                    <article class="testimonial-card" role="listitem">
+                        <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            <p>"The team delivered outstanding results with exceptional professionalism."</p>
                         </blockquote>
-                        <div class="testimonial__author">
-                            <img src="images/client-2.png" alt="Michael Chen" width="50" height="50" class="testimonial__avatar">
-                            <div class="testimonial__info">
-                                <cite class="testimonial__name">Michael Chen</cite>
-                                <span class="testimonial__role">Founder, StartupXYZ</span>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar-wrapper">
+                                <img
+                                    src="images/client-michael.png"
+                                    data-lazy="images/client-michael.png"
+                                    alt="Michael Chen, Founder of CloudEdge"
+                                    class="testimonial-card__avatar"
+                                    width="56"
+                                    height="56"
+                                >
+                            </div>
+                            <div class="testimonial-card__info">
+                                <cite class="testimonial-card__name">Michael Chen</cite>
+                                <span class="testimonial-card__role">Founder</span>
+                                <span class="testimonial-card__company">CloudEdge</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial-card" role="listitem">
+                        <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            <p>"Our productivity increased dramatically after implementing NovaTech's AI solutions."</p>
+                        </blockquote>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar-wrapper">
+                                <img
+                                    src="images/client-emily.png"
+                                    data-lazy="images/client-emily.png"
+                                    alt="Emily Rodriguez, Marketing Director at BrightLabs"
+                                    class="testimonial-card__avatar"
+                                    width="56"
+                                    height="56"
+                                >
+                            </div>
+                            <div class="testimonial-card__info">
+                                <cite class="testimonial-card__name">Emily Rodriguez</cite>
+                                <span class="testimonial-card__role">Marketing Director</span>
+                                <span class="testimonial-card__company">BrightLabs</span>
                             </div>
                         </div>
                     </article>
@@ -319,49 +525,122 @@
         </section>
 
         <!-- Pricing -->
-        <section id="pricing" class="pricing">
+        <section id="pricing" class="pricing" aria-labelledby="pricing-heading" data-reveal="fade-right">
             <div class="container">
-                <h2 class="section__title">Pricing Plans</h2>
-                <p class="section__subtitle">Choose the plan that fits your needs</p>
-                <div class="pricing__grid">
-                    <article class="pricing-card">
-                        <h3 class="pricing-card__title">Starter</h3>
+                <h2 id="pricing-heading" class="section__title">Simple, Transparent Pricing</h2>
+                <p class="section__subtitle">Choose the perfect plan for your business growth.</p>
+                <div class="pricing__grid" role="list">
+                    <!-- Starter Plan -->
+                    <article class="pricing-card" role="listitem">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Starter</h3>
+                            <p class="pricing-card__description">Perfect for small projects and individuals.</p>
+                        </div>
                         <div class="pricing-card__price">
-                            <span class="pricing-card__amount">$29</span>
+                            <span class="pricing-card__currency">$</span>
+                            <span class="pricing-card__amount">29</span>
                             <span class="pricing-card__period">/month</span>
                         </div>
-                        <ul class="pricing-card__features">
-                            <li>5 Projects</li>
-                            <li>10GB Storage</li>
-                            <li>Email Support</li>
+                        <ul class="pricing-card__features" role="list">
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                5 Projects
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Email Support
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Basic Analytics
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Cloud Storage
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Community Access
+                            </li>
                         </ul>
                         <a href="#contact" class="btn btn--secondary pricing-card__cta">Get Started</a>
                     </article>
-                    <article class="pricing-card pricing-card--featured">
-                        <h3 class="pricing-card__title">Professional</h3>
+
+                    <!-- Professional Plan (Featured) -->
+                    <article class="pricing-card pricing-card--featured" role="listitem">
+                        <div class="pricing-card__badge" aria-label="Most Popular plan">Most Popular</div>
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Professional</h3>
+                            <p class="pricing-card__description">Best for growing teams and businesses.</p>
+                        </div>
                         <div class="pricing-card__price">
-                            <span class="pricing-card__amount">$79</span>
+                            <span class="pricing-card__currency">$</span>
+                            <span class="pricing-card__amount">79</span>
                             <span class="pricing-card__period">/month</span>
                         </div>
-                        <ul class="pricing-card__features">
-                            <li>Unlimited Projects</li>
-                            <li>100GB Storage</li>
-                            <li>Priority Support</li>
-                            <li>Advanced Analytics</li>
+                        <ul class="pricing-card__features" role="list">
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Unlimited Projects
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Priority Support
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Advanced Analytics
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                AI Automation
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Team Collaboration
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                API Access
+                            </li>
                         </ul>
-                        <a href="#contact" class="btn btn--primary pricing-card__cta">Get Started</a>
+                        <a href="#contact" class="btn btn--primary pricing-card__cta">Start Free Trial</a>
                     </article>
-                    <article class="pricing-card">
-                        <h3 class="pricing-card__title">Enterprise</h3>
-                        <div class="pricing-card__price">
-                            <span class="pricing-card__amount">$149</span>
-                            <span class="pricing-card__period">/month</span>
+
+                    <!-- Enterprise Plan -->
+                    <article class="pricing-card" role="listitem">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Enterprise</h3>
+                            <p class="pricing-card__description">For large organizations with custom needs.</p>
                         </div>
-                        <ul class="pricing-card__features">
-                            <li>Unlimited Everything</li>
-                            <li>1TB Storage</li>
-                            <li>24/7 Phone Support</li>
-                            <li>Custom Integrations</li>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount pricing-card__amount--custom">Custom</span>
+                        </div>
+                        <ul class="pricing-card__features" role="list">
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Everything in Professional
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Dedicated Account Manager
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Custom Integrations
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Enterprise Security
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                SLA Support
+                            </li>
+                            <li class="pricing-card__feature">
+                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+                                Unlimited Team Members
+                            </li>
                         </ul>
                         <a href="#contact" class="btn btn--secondary pricing-card__cta">Contact Sales</a>
                     </article>
@@ -370,82 +649,383 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="faq">
+        <section id="faq" class="faq" aria-labelledby="faq-heading" data-reveal="fade-up">
             <div class="container">
-                <h2 class="section__title">Frequently Asked Questions</h2>
-                <p class="section__subtitle">Find answers to common questions</p>
-                <div class="faq__list">
-                    <article class="faq-item">
-                        <h3 class="faq-item__question">How long does a typical project take?</h3>
-                        <p class="faq-item__answer">Project timelines vary based on complexity. A standard website takes 4-6 weeks, while custom applications may take 3-6 months.</p>
+                <h2 id="faq-heading" class="section__title">Frequently Asked Questions</h2>
+                <p class="section__subtitle">Everything you need to know before working with NovaTech.</p>
+                <div class="faq__list" role="list">
+                    <article class="faq-item" role="listitem">
+                        <h3>
+                            <button
+                                class="faq-item__toggle"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-1"
+                                id="faq-question-1"
+                            >
+                                <span class="faq-item__question">What services does NovaTech provide?</span>
+                                <span class="faq-item__icon" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div
+                            class="faq-item__answer"
+                            id="faq-answer-1"
+                            role="region"
+                            aria-labelledby="faq-question-1"
+                        >
+                            <p>NovaTech offers end-to-end digital solutions including web development, mobile app development, UI/UX design, digital marketing, cloud infrastructure, and AI integration. We tailor our services to meet each client's unique business goals.</p>
+                        </div>
                     </article>
-                    <article class="faq-item">
-                        <h3 class="faq-item__question">Do you offer ongoing maintenance?</h3>
-                        <p class="faq-item__answer">Yes, we offer flexible maintenance plans to keep your application running smoothly after launch.</p>
+                    <article class="faq-item" role="listitem">
+                        <h3>
+                            <button
+                                class="faq-item__toggle"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-2"
+                                id="faq-question-2"
+                            >
+                                <span class="faq-item__question">How long does a typical project take?</span>
+                                <span class="faq-item__icon" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div
+                            class="faq-item__answer"
+                            id="faq-answer-2"
+                            role="region"
+                            aria-labelledby="faq-question-2"
+                        >
+                            <p>Project timelines vary based on scope and complexity. A standard website typically takes 4-6 weeks, while custom applications may take 3-6 months. We provide a detailed timeline during the proposal phase.</p>
+                        </div>
                     </article>
-                    <article class="faq-item">
-                        <h3 class="faq-item__question">What technologies do you use?</h3>
-                        <p class="faq-item__answer">We work with modern frameworks including React, Vue, Node.js, and cloud platforms like AWS and Azure.</p>
+                    <article class="faq-item" role="listitem">
+                        <h3>
+                            <button
+                                class="faq-item__toggle"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-3"
+                                id="faq-question-3"
+                            >
+                                <span class="faq-item__question">Do you offer custom software development?</span>
+                                <span class="faq-item__icon" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div
+                            class="faq-item__answer"
+                            id="faq-answer-3"
+                            role="region"
+                            aria-labelledby="faq-question-3"
+                        >
+                            <p>Yes, we specialize in custom software development tailored to your specific requirements. Our team works closely with you to understand your workflows and build solutions that integrate seamlessly with your existing systems.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item" role="listitem">
+                        <h3>
+                            <button
+                                class="faq-item__toggle"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-4"
+                                id="faq-question-4"
+                            >
+                                <span class="faq-item__question">Can I upgrade my pricing plan later?</span>
+                                <span class="faq-item__icon" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div
+                            class="faq-item__answer"
+                            id="faq-answer-4"
+                            role="region"
+                            aria-labelledby="faq-question-4"
+                        >
+                            <p>Absolutely. You can upgrade your plan at any time as your business grows. We'll prorate the remaining balance on your current plan and apply it toward the new tier, so you only pay the difference.</p>
+                        </div>
+                    </article>
+                    <article class="faq-item" role="listitem">
+                        <h3>
+                            <button
+                                class="faq-item__toggle"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-5"
+                                id="faq-question-5"
+                            >
+                                <span class="faq-item__question">Do you provide ongoing support?</span>
+                                <span class="faq-item__icon" aria-hidden="true"></span>
+                            </button>
+                        </h3>
+                        <div
+                            class="faq-item__answer"
+                            id="faq-answer-5"
+                            role="region"
+                            aria-labelledby="faq-question-5"
+                        >
+                            <p>We offer comprehensive post-launch support including maintenance plans, performance monitoring, security updates, and feature enhancements. Our support team is available via email, phone, and live chat during business hours.</p>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" aria-labelledby="contact-heading" data-reveal="fade-up">
             <div class="container contact__container">
-                <div class="contact__info">
-                    <h2 class="section__title">Get In Touch</h2>
-                    <p class="contact__text">Ready to start your project? Contact us for a free consultation.</p>
-                    <address class="contact__details">
-                        <p>Email: info@brandname.com</p>
-                        <p>Phone: (555) 123-4567</p>
-                        <p>Address: 123 Business St, City, Country</p>
-                    </address>
+                <!-- Left Column: Contact Form -->
+                <div class="contact__form-wrapper">
+                    <h2 id="contact-heading" class="section__title">Let's Build Something Amazing Together</h2>
+                    <p class="section__subtitle">Tell us about your project and our team will contact you within 24 hours.</p>
+
+                    <form id="contact-form" class="contact__form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name" class="form-label">Full Name <span class="form-label__required" aria-hidden="true">*</span></label>
+                                <input
+                                    type="text"
+                                    id="contact-name"
+                                    name="name"
+                                    class="form-input"
+                                    placeholder="John Doe"
+                                    required
+                                    autocomplete="name"
+                                    aria-required="true"
+                                >
+                                <span class="form-error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email" class="form-label">Email Address <span class="form-label__required" aria-hidden="true">*</span></label>
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="john@company.com"
+                                    required
+                                    autocomplete="email"
+                                    aria-required="true"
+                                >
+                                <span class="form-error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-phone" class="form-label">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="contact-phone"
+                                    name="phone"
+                                    class="form-input"
+                                    placeholder="+1 (555) 123-4567"
+                                    autocomplete="tel"
+                                >
+                                <span class="form-error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-company" class="form-label">Company Name</label>
+                                <input
+                                    type="text"
+                                    id="contact-company"
+                                    name="company"
+                                    class="form-input"
+                                    placeholder="Acme Inc."
+                                    autocomplete="organization"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-service" class="form-label">Service Required <span class="form-label__required" aria-hidden="true">*</span></label>
+                            <select
+                                id="contact-service"
+                                name="service"
+                                class="form-input form-select"
+                                required
+                                aria-required="true"
+                            >
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="mobile-app">Mobile App Development</option>
+                                <option value="ui-ux-design">UI/UX Design</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="cloud-services">Cloud Services</option>
+                                <option value="ai-integration">AI Integration</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="form-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Message <span class="form-label__required" aria-hidden="true">*</span></label>
+                            <textarea
+                                id="contact-message"
+                                name="message"
+                                class="form-input form-textarea"
+                                rows="5"
+                                placeholder="Tell us about your project, goals, and timeline..."
+                                required
+                                aria-required="true"
+                            ></textarea>
+                            <span class="form-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary contact__submit">
+                            <span class="contact__submit-text">Send Message</span>
+                            <span class="contact__submit-icon" aria-hidden="true">&#10148;</span>
+                        </button>
+
+                        <div id="form-status" class="contact__status" role="status" aria-live="polite"></div>
+                    </form>
                 </div>
-                <form class="contact__form" action="#" method="post">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+
+                <!-- Right Column: Contact Info -->
+                <aside class="contact__info">
+                    <div class="contact__info-cards">
+                        <div class="contact-card">
+                            <div class="contact-card__icon" aria-hidden="true">&#128205;</div>
+                            <div class="contact-card__content">
+                                <h3 class="contact-card__title">Office Address</h3>
+                                <p class="contact-card__text">123 Innovation Drive, Suite 400<br>San Francisco, CA 94105</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card__icon" aria-hidden="true">&#128222;</div>
+                            <div class="contact-card__content">
+                                <h3 class="contact-card__title">Phone Number</h3>
+                                <p class="contact-card__text">+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card__icon" aria-hidden="true">&#9993;</div>
+                            <div class="contact-card__content">
+                                <h3 class="contact-card__title">Email</h3>
+                                <p class="contact-card__text">info@novatech.com<br>support@novatech.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card__icon" aria-hidden="true">&#128336;</div>
+                            <div class="contact-card__content">
+                                <h3 class="contact-card__title">Working Hours</h3>
+                                <p class="contact-card__text">Mon - Fri: 9:00 AM - 6:00 PM<br>Weekend: Emergency Only</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
+
+                    <div class="contact__social">
+                        <h3 class="contact__social-title">Follow Us</h3>
+                        <div class="contact__social-links">
+                            <a href="#" class="contact__social-link" aria-label="LinkedIn">
+                                <span class="contact__social-icon" aria-hidden="true">in</span>
+                            </a>
+                            <a href="#" class="contact__social-link" aria-label="GitHub">
+                                <span class="contact__social-icon" aria-hidden="true">GH</span>
+                            </a>
+                            <a href="#" class="contact__social-link" aria-label="Twitter">
+                                <span class="contact__social-icon" aria-hidden="true">TW</span>
+                            </a>
+                            <a href="#" class="contact__social-link" aria-label="Instagram">
+                                <span class="contact__social-icon" aria-hidden="true">IG</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-input form-textarea" rows="5" required></textarea>
+
+                    <div class="contact__map" aria-label="Office location map">
+                        <div class="contact__map-placeholder">
+                            <span class="contact__map-icon" aria-hidden="true">&#128506;</span>
+                            <span class="contact__map-text">Map Placeholder</span>
+                            <span class="contact__map-subtext">San Francisco, CA</span>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn--primary">Send Message</button>
-                </form>
+                </aside>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="footer">
-        <div class="container footer__container">
-            <div class="footer__brand">
-                <span class="footer__logo">BrandName</span>
-                <p class="footer__tagline">Building the future, one project at a time.</p>
+    <footer id="footer" class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <!-- Column 1: Brand -->
+                <div class="footer__brand">
+                    <a href="#hero" class="footer__logo" aria-label="NovaTech - Back to top">
+                        <span class="footer__logo-text">NovaTech</span>
+                    </a>
+                    <p class="footer__description">Empowering businesses with innovative digital solutions. We build technology that drives growth, efficiency, and lasting success.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                            <span class="footer__social-icon" aria-hidden="true">in</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="GitHub">
+                            <span class="footer__social-icon" aria-hidden="true">GH</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <span class="footer__social-icon" aria-hidden="true">IG</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">
+                            <span class="footer__social-icon" aria-hidden="true">TW</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <span class="footer__social-icon" aria-hidden="true">FB</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <nav class="footer__nav" aria-label="Quick links">
+                    <h3 class="footer__heading">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="#hero" class="footer__link">Home</a></li>
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#services" class="footer__link">Services</a></li>
+                        <li><a href="#pricing" class="footer__link">Pricing</a></li>
+                        <li><a href="#contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 3: Services -->
+                <nav class="footer__nav" aria-label="Services links">
+                    <h3 class="footer__heading">Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="#services" class="footer__link">Web Development</a></li>
+                        <li><a href="#services" class="footer__link">Mobile Apps</a></li>
+                        <li><a href="#services" class="footer__link">AI Automation</a></li>
+                        <li><a href="#services" class="footer__link">Cloud Solutions</a></li>
+                        <li><a href="#services" class="footer__link">UI/UX Design</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 4: Newsletter -->
+                <div class="footer__newsletter">
+                    <h3 class="footer__heading">Stay Updated</h3>
+                    <p class="footer__newsletter-text">Subscribe to our newsletter for the latest insights, tips, and industry trends.</p>
+                    <form id="newsletter-form" class="footer__newsletter-form" novalidate>
+                        <div class="footer__newsletter-input-wrapper">
+                            <input
+                                type="email"
+                                id="newsletter-email"
+                                class="footer__newsletter-input"
+                                placeholder="Enter your email"
+                                required
+                                aria-label="Email address for newsletter"
+                                aria-required="true"
+                            >
+                            <button type="submit" class="footer__newsletter-btn">
+                                <span class="footer__newsletter-btn-text">Subscribe</span>
+                                <span class="footer__newsletter-btn-icon" aria-hidden="true">&#10148;</span>
+                            </button>
+                        </div>
+                        <span id="newsletter-error" class="footer__newsletter-error" role="alert" aria-live="polite"></span>
+                        <span id="newsletter-success" class="footer__newsletter-success" role="status" aria-live="polite"></span>
+                    </form>
+                </div>
             </div>
-            <nav class="footer__nav" aria-label="Footer navigation">
-                <ul class="footer__links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="footer__social">
-                <a href="#" aria-label="Facebook">Facebook</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+
+            <!-- Bottom Footer -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-left">
+                    <p class="footer__copyright">&copy; 2026 NovaTech. All Rights Reserved.</p>
+                </div>
+                <div class="footer__bottom-links">
+                    <a href="#" class="footer__bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer__bottom-link">Terms &amp; Conditions</a>
+                </div>
             </div>
-        </div>
-        <div class="footer__bottom">
-            <p>&copy; 2026 BrandName. All rights reserved.</p>
         </div>
     </footer>
 
