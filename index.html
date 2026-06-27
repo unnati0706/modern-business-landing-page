@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Business Landing Page - Empowering Your Business Growth">
+    <title>Modern Business Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <nav id="navbar" class="navbar" aria-label="Main navigation">
+            <a href="#hero" class="logo" aria-label="BrandName - Home">
+                <span class="logo__text">BrandName</span>
+            </a>
+
+            <ul id="nav-links" class="nav__links" role="list">
+                <li class="nav__item"><a href="#hero" class="nav__link nav__link--active">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="btn btn--primary nav__cta">Get Started</a>
+
+            <button
+                id="hamburger"
+                class="hamburger"
+                type="button"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-links"
+            >
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero__bg-shape" aria-hidden="true"></div>
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <span class="hero__badge">
+                        <span class="hero__badge-icon" aria-hidden="true">&#10003;</span>
+                        Trusted by 500+ Businesses
+                    </span>
+                    <h1 class="hero__title">
+                        Automate Your Work with
+                        <span class="hero__title-highlight">AI-Powered</span>
+                        Intelligence
+                    </h1>
+                    <p class="hero__description">
+                        NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent automation solutions built for the future.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#contact" class="btn btn--primary hero__btn-primary">
+                            Get Started
+                            <span class="hero__btn-arrow" aria-hidden="true">&#8594;</span>
+                        </a>
+                        <a href="#about" class="btn btn--secondary hero__btn-secondary">
+                            <span class="hero__btn-play" aria-hidden="true">&#9654;</span>
+                            Watch Demo
+                        </a>
+                    </div>
+                    <div class="hero__stats" aria-label="Company statistics">
+                        <div class="hero__stat">
+                            <span class="hero__stat-number">500+</span>
+                            <span class="hero__stat-label">Projects Done</span>
+                        </div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-number">150+</span>
+                            <span class="hero__stat-label">Happy Clients</span>
+                        </div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-number">4.9</span>
+                            <span class="hero__stat-label">Average Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__image-wrapper">
+                        <img
+                            src="images/hero-dashboard.png"
+                            alt="NovaTech AI dashboard showing workflow automation metrics and analytics"
+                            class="hero__image"
+                            width="580"
+                            height="420"
+                        >
+                        <div class="hero__floating-card hero__floating-card--top" aria-hidden="true">
+                            <span class="hero__floating-icon">&#128640;</span>
+                            <span class="hero__floating-text">Workflow Automated</span>
+                        </div>
+                        <div class="hero__floating-card hero__floating-card--bottom" aria-hidden="true">
+                            <span class="hero__floating-icon">&#128200;</span>
+                            <span class="hero__floating-text">+47% Productivity</span>
+                        </div>
+                        <div class="hero__floating-card hero__floating-card--right" aria-hidden="true">
+                            <span class="hero__floating-icon">&#9989;</span>
+                            <span class="hero__floating-text">99.9% Uptime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted Companies -->
+        <section id="trusted-companies" class="trusted" aria-labelledby="trusted-heading">
+            <div class="container">
+                <p id="trusted-heading" class="trusted__label">Trusted by Leading Companies</p>
+                <div class="trusted__logos" role="list" aria-label="Trusted companies">
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Google">Google</span>
+                    </div>
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Microsoft">Microsoft</span>
+                    </div>
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Spotify">Spotify</span>
+                    </div>
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Slack">Slack</span>
+                    </div>
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Adobe">Adobe</span>
+                    </div>
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Netflix">Netflix</span>
+                    </div>
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Airbnb">Airbnb</span>
+                    </div>
+                    <div class="trusted__logo-card" role="listitem">
+                        <span class="trusted__logo-text" aria-label="Notion">Notion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="services" aria-labelledby="services-heading">
+            <div class="container">
+                <h2 id="services-heading" class="section__title">Our Services</h2>
+                <p class="section__subtitle">We provide end-to-end digital solutions that help businesses innovate, scale, and succeed in today's competitive landscape.</p>
+                <div class="services__grid" role="list">
+                    <article class="service-card" role="listitem">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <span class="service-card__icon-symbol">&#128187;</span>
+                        </div>
+                        <h3 class="service-card__title">Web Development</h3>
+                        <p class="service-card__description">Custom web applications built with React, Vue, and Node.js for optimal performance, scalability, and user experience.</p>
+                        <a href="#contact" class="service-card__link">
+                            Learn More
+                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
+                        </a>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <span class="service-card__icon-symbol">&#128241;</span>
+                        </div>
+                        <h3 class="service-card__title">Mobile App Development</h3>
+                        <p class="service-card__description">Native iOS and Android applications plus cross-platform solutions using Flutter and React Native.</p>
+                        <a href="#contact" class="service-card__link">
+                            Learn More
+                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
+                        </a>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <span class="service-card__icon-symbol">&#127912;</span>
+                        </div>
+                        <h3 class="service-card__title">UI/UX Design</h3>
+                        <p class="service-card__description">User-centered design that transforms complex workflows into intuitive, engaging digital experiences.</p>
+                        <a href="#contact" class="service-card__link">
+                            Learn More
+                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
+                        </a>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <span class="service-card__icon-symbol">&#128640;</span>
+                        </div>
+                        <h3 class="service-card__title">Digital Marketing</h3>
+                        <p class="service-card__description">Data-driven SEO, PPC, and content strategies that increase visibility, traffic, and conversions.</p>
+                        <a href="#contact" class="service-card__link">
+                            Learn More
+                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
+                        </a>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <span class="service-card__icon-symbol">&#9729;&#65039;</span>
+                        </div>
+                        <h3 class="service-card__title">Cloud Solutions</h3>
+                        <p class="service-card__description">Scalable AWS, Azure, and GCP infrastructure with migration, optimization, and 24/7 management services.</p>
+                        <a href="#contact" class="service-card__link">
+                            Learn More
+                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
+                        </a>
+                    </article>
+                    <article class="service-card" role="listitem">
+                        <div class="service-card__icon" aria-hidden="true">
+                            <span class="service-card__icon-symbol">&#129302;</span>
+                        </div>
+                        <h3 class="service-card__title">AI Automation</h3>
+                        <p class="service-card__description">Intelligent workflows, chatbots, and machine learning solutions that automate repetitive tasks and boost productivity.</p>
+                        <a href="#contact" class="service-card__link">
+                            Learn More
+                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="about" class="about">
+            <div class="container about__container">
+                <div class="about__image">
+                    <img src="images/about-image.png" alt="Our team collaborating in a modern office" width="500" height="400">
+                </div>
+                <div class="about__content">
+                    <h2 class="section__title">About Us</h2>
+                    <p class="about__text">We are a team of passionate developers, designers, and strategists dedicated to helping businesses succeed in the digital age.</p>
+                    <p class="about__text">With over a decade of experience, we've helped hundreds of companies transform their ideas into successful products.</p>
+                    <a href="#contact" class="btn btn--primary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why-choose-us" class="features">
+            <div class="container">
+                <h2 class="section__title">Why Choose Us</h2>
+                <p class="section__subtitle">What sets us apart from the competition</p>
+                <div class="features__grid">
+                    <article class="feature">
+                        <h3 class="feature__title">Expert Team</h3>
+                        <p class="feature__description">Our experienced professionals bring deep expertise to every project.</p>
+                    </article>
+                    <article class="feature">
+                        <h3 class="feature__title">Quality First</h3>
+                        <p class="feature__description">We never compromise on quality and follow industry best practices.</p>
+                    </article>
+                    <article class="feature">
+                        <h3 class="feature__title">24/7 Support</h3>
+                        <p class="feature__description">Round-the-clock support to keep your business running smoothly.</p>
+                    </article>
+                    <article class="feature">
+                        <h3 class="feature__title">Fast Delivery</h3>
+                        <p class="feature__description">Agile development process ensures timely project completion.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section id="statistics" class="stats">
+            <div class="container stats__container">
+                <div class="stat">
+                    <span class="stat__number">500+</span>
+                    <span class="stat__label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">150+</span>
+                    <span class="stat__label">Happy Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">50+</span>
+                    <span class="stat__label">Team Members</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">10+</span>
+                    <span class="stat__label">Years Experience</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section__title">What Our Clients Say</h2>
+                <p class="section__subtitle">Success stories from businesses we've helped</p>
+                <div class="testimonials__grid">
+                    <article class="testimonial">
+                        <blockquote class="testimonial__quote">
+                            <p>"This team transformed our business. Their expertise and dedication delivered results beyond our expectations."</p>
+                        </blockquote>
+                        <div class="testimonial__author">
+                            <img src="images/client-1.png" alt="Sarah Johnson" width="50" height="50" class="testimonial__avatar">
+                            <div class="testimonial__info">
+                                <cite class="testimonial__name">Sarah Johnson</cite>
+                                <span class="testimonial__role">CEO, TechCorp</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="testimonial">
+                        <blockquote class="testimonial__quote">
+                            <p>"Professional, responsive, and incredibly talented. They helped us launch our product on time and under budget."</p>
+                        </blockquote>
+                        <div class="testimonial__author">
+                            <img src="images/client-2.png" alt="Michael Chen" width="50" height="50" class="testimonial__avatar">
+                            <div class="testimonial__info">
+                                <cite class="testimonial__name">Michael Chen</cite>
+                                <span class="testimonial__role">Founder, StartupXYZ</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 class="section__title">Pricing Plans</h2>
+                <p class="section__subtitle">Choose the plan that fits your needs</p>
+                <div class="pricing__grid">
+                    <article class="pricing-card">
+                        <h3 class="pricing-card__title">Starter</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">$29</span>
+                            <span class="pricing-card__period">/month</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li>5 Projects</li>
+                            <li>10GB Storage</li>
+                            <li>Email Support</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--secondary pricing-card__cta">Get Started</a>
+                    </article>
+                    <article class="pricing-card pricing-card--featured">
+                        <h3 class="pricing-card__title">Professional</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">$79</span>
+                            <span class="pricing-card__period">/month</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li>Unlimited Projects</li>
+                            <li>100GB Storage</li>
+                            <li>Priority Support</li>
+                            <li>Advanced Analytics</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--primary pricing-card__cta">Get Started</a>
+                    </article>
+                    <article class="pricing-card">
+                        <h3 class="pricing-card__title">Enterprise</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">$149</span>
+                            <span class="pricing-card__period">/month</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li>Unlimited Everything</li>
+                            <li>1TB Storage</li>
+                            <li>24/7 Phone Support</li>
+                            <li>Custom Integrations</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--secondary pricing-card__cta">Contact Sales</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section__title">Frequently Asked Questions</h2>
+                <p class="section__subtitle">Find answers to common questions</p>
+                <div class="faq__list">
+                    <article class="faq-item">
+                        <h3 class="faq-item__question">How long does a typical project take?</h3>
+                        <p class="faq-item__answer">Project timelines vary based on complexity. A standard website takes 4-6 weeks, while custom applications may take 3-6 months.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 class="faq-item__question">Do you offer ongoing maintenance?</h3>
+                        <p class="faq-item__answer">Yes, we offer flexible maintenance plans to keep your application running smoothly after launch.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 class="faq-item__question">What technologies do you use?</h3>
+                        <p class="faq-item__answer">We work with modern frameworks including React, Vue, Node.js, and cloud platforms like AWS and Azure.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container contact__container">
+                <div class="contact__info">
+                    <h2 class="section__title">Get In Touch</h2>
+                    <p class="contact__text">Ready to start your project? Contact us for a free consultation.</p>
+                    <address class="contact__details">
+                        <p>Email: info@brandname.com</p>
+                        <p>Phone: (555) 123-4567</p>
+                        <p>Address: 123 Business St, City, Country</p>
+                    </address>
+                </div>
+                <form class="contact__form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container footer__container">
+            <div class="footer__brand">
+                <span class="footer__logo">BrandName</span>
+                <p class="footer__tagline">Building the future, one project at a time.</p>
+            </div>
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <ul class="footer__links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer__social">
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 BrandName. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
