@@ -41,6 +41,29 @@
     <!-- Preconnect to external origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NovaTech",
+        "url": "https://novatech.com",
+        "logo": "https://novatech.com/images/logo.png",
+        "description": "NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions.",
+        "sameAs": [
+            "https://linkedin.com/company/novatech",
+            "https://github.com/novatech",
+            "https://twitter.com/novatech"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-123-4567",
+            "contactType": "sales",
+            "availableLanguage": "English"
+        }
+    }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -51,10 +74,123 @@
     <!-- Loading Screen -->
     <div id="loader" class="loader" aria-hidden="true">
         <div class="loader__content">
-            <span class="loader__logo">NovaTech</span>
+            <div class="loader__logo-wrapper">
+                <span class="loader__logo">NovaTech</span>
+                <div class="loader__logo-glow"></div>
+            </div>
             <div class="loader__bar">
                 <div class="loader__progress"></div>
             </div>
+            <span class="loader__text">Loading experience...</span>
+        </div>
+    </div>
+
+    <!-- Page Transition Overlay -->
+    <div id="page-transition" class="page-transition" aria-hidden="true">
+        <div class="page-transition__layer"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress">
+        <div class="scroll-progress__bar"></div>
+    </div>
+
+    <!-- Custom Cursor (Desktop Only) -->
+    <div id="cursor-dot" class="cursor cursor--dot" aria-hidden="true"></div>
+    <div id="cursor-ring" class="cursor cursor--ring" aria-hidden="true"></div>
+
+    <!-- Command Palette -->
+    <div id="command-palette" class="command-palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+        <div class="command-palette__backdrop"></div>
+        <div class="command-palette__container">
+            <div class="command-palette__header">
+                <span class="command-palette__icon" aria-hidden="true">&#8984;</span>
+                <input
+                    type="text"
+                    id="command-input"
+                    class="command-palette__input"
+                    placeholder="Search sections, navigate..."
+                    autocomplete="off"
+                    aria-label="Search sections"
+                >
+                <kbd class="command-palette__kbd">ESC</kbd>
+            </div>
+            <ul id="command-results" class="command-palette__results" role="listbox">
+                <li class="command-palette__item" role="option" data-section="hero">
+                    <span class="command-palette__item-icon" aria-hidden="true">&#127968;</span>
+                    <span class="command-palette__item-text">Home</span>
+                    <span class="command-palette__item-shortcut">Go to top</span>
+                </li>
+                <li class="command-palette__item" role="option" data-section="services">
+                    <span class="command-palette__item-icon" aria-hidden="true">&#128187;</span>
+                    <span class="command-palette__item-text">Services</span>
+                    <span class="command-palette__item-shortcut">Our offerings</span>
+                </li>
+                <li class="command-palette__item" role="option" data-section="about">
+                    <span class="command-palette__item-icon" aria-hidden="true">&#127970;</span>
+                    <span class="command-palette__item-text">About</span>
+                    <span class="command-palette__item-shortcut">Learn more</span>
+                </li>
+                <li class="command-palette__item" role="option" data-section="pricing">
+                    <span class="command-palette__item-icon" aria-hidden="true">&#128176;</span>
+                    <span class="command-palette__item-text">Pricing</span>
+                    <span class="command-palette__item-shortcut">View plans</span>
+                </li>
+                <li class="command-palette__item" role="option" data-section="faq">
+                    <span class="command-palette__item-icon" aria-hidden="true">&#10067;</span>
+                    <span class="command-palette__item-text">FAQ</span>
+                    <span class="command-palette__item-shortcut">Common questions</span>
+                </li>
+                <li class="command-palette__item" role="option" data-section="contact">
+                    <span class="command-palette__item-icon" aria-hidden="true">&#128231;</span>
+                    <span class="command-palette__item-text">Contact</span>
+                    <span class="command-palette__item-shortcut">Get in touch</span>
+                </li>
+            </ul>
+            <div class="command-palette__footer">
+                <span>&#8593;&#8595; Navigate</span>
+                <span>&#9166; Select</span>
+                <span>ESC Close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Assistant Widget -->
+    <div id="ai-assistant" class="ai-assistant" role="complementary" aria-label="AI Assistant">
+        <button id="ai-toggle" class="ai-assistant__toggle" aria-label="Open AI assistant" aria-expanded="false">
+            <span class="ai-assistant__toggle-icon" aria-hidden="true">&#129302;</span>
+            <span class="ai-assistant__toggle-pulse"></span>
+        </button>
+        <div id="ai-chat" class="ai-assistant__chat" hidden>
+            <div class="ai-assistant__header">
+                <div class="ai-assistant__header-info">
+                    <span class="ai-assistant__avatar" aria-hidden="true">&#129302;</span>
+                    <div>
+                        <span class="ai-assistant__name">NovaBot</span>
+                        <span class="ai-assistant__status">Online</span>
+                    </div>
+                </div>
+                <button id="ai-minimize" class="ai-assistant__minimize" aria-label="Minimize chat">&#8722;</button>
+            </div>
+            <div id="ai-messages" class="ai-assistant__messages">
+                <div class="ai-assistant__message ai-assistant__message--bot">
+                    <span class="ai-assistant__message-avatar" aria-hidden="true">&#129302;</span>
+                    <div class="ai-assistant__message-content">
+                        <p>Hi! I'm NovaBot, your AI assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-assistant__suggestions">
+                <button class="ai-assistant__suggestion" data-question="What services do you offer?">What services do you offer?</button>
+                <button class="ai-assistant__suggestion" data-question="How much does it cost?">Pricing info</button>
+                <button class="ai-assistant__suggestion" data-question="How can I contact you?">Contact details</button>
+            </div>
+            <form id="ai-form" class="ai-assistant__form">
+                <input type="text" id="ai-input" class="ai-assistant__input" placeholder="Ask me anything..." aria-label="Type your message">
+                <button type="submit" class="ai-assistant__send" aria-label="Send message">
+                    <span aria-hidden="true">&#10148;</span>
+                </button>
+            </form>
         </div>
     </div>
 
@@ -85,10 +221,15 @@
                 class="theme-toggle"
                 type="button"
                 aria-label="Toggle dark mode"
-                title="Toggle dark mode"
+                title="Toggle theme (Light/Dark/System)"
             >
                 <span class="theme-toggle__icon theme-toggle__icon--light" aria-hidden="true">&#9788;</span>
                 <span class="theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true">&#9790;</span>
+                <span class="theme-toggle__icon theme-toggle__icon--system" aria-hidden="true">&#9881;</span>
+            </button>
+
+            <button id="cmd-palette-btn" class="cmd-palette-trigger" type="button" aria-label="Open command palette" title="Command palette (Ctrl+K)">
+                <span aria-hidden="true">&#8984;K</span>
             </button>
 
             <button

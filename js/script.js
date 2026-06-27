@@ -859,3 +859,433 @@
         lazyObserver.observe(img);
     });
 })();
+
+// ============================================
+// SCROLL PROGRESS BAR MODULE
+// ============================================
+
+(function () {
+    'use strict';
+
+    var progressBar = document.querySelector('.scroll-progress__bar');
+    var progressContainer = document.getElementById('scroll-progress');
+
+    if (!progressBar || !progressContainer) return;
+
+    function updateProgress() {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+        progressBar.style.width = progress + '%';
+        progressContainer.setAttribute('aria-valuenow', Math.round(progress));
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
+})();
+
+// ============================================
+// CUSTOM CURSOR MODULE (Desktop Only)
+// ============================================
+
+(function () {
+    'use strict';
+
+    // Only enable on devices with fine pointer (mouse)
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    var cursorDot = document.getElementById('cursor-dot');
+    var cursorRing = document.getElementById('cursor-ring');
+
+    if (!cursorDot || !cursorRing) return;
+
+    var mouseX = 0, mouseY = 0;
+    var ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
+
+    // Smooth ring follow
+    function animateRing() {
+        ringX += (mouseX - ringX) * 0.15;
+        ringY += (mouseY - ringY) * 0.15;
+
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+
+        requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Hover effects on interactive elements
+    var hoverElements = document.querySelectorAll('a, button, input, textarea, select, [role="button"]');
+
+    hoverElements.forEach(function (el) {
+        el.addEventListener('mouseenter', function () {
+            document.body.classList.add('cursor--hover');
+        });
+        el.addEventListener('mouseleave', function () {
+            document.body.classList.remove('cursor--hover');
+        });
+    });
+
+    // Click effect
+    document.addEventListener('mousedown', function () {
+        document.body.classList.add('cursor--click');
+    });
+
+    document.addEventListener('mouseup', function () {
+        document.body.classList.remove('cursor--click');
+    });
+})();
+
+// ============================================
+// COMMAND PALETTE MODULE
+// ============================================
+
+(function () {
+    'use strict';
+
+    var palette = document.getElementById('command-palette');
+    var input = document.getElementById('command-input');
+    var results = document.getElementById('command-results');
+    var triggerBtn = document.getElementById('cmd-palette-btn');
+    var items = results ? results.querySelectorAll('.command-palette__item') : [];
+    var activeIndex = -1;
+
+    if (!palette || !input) return;
+
+    function openPalette() {
+        palette.hidden = false;
+        input.value = '';
+        filterResults('');
+        activeIndex = -1;
+        input.focus();
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePalette() {
+        palette.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    function filterResults(query) {
+        var lowerQuery = query.toLowerCase();
+        items.forEach(function (item) {
+            var text = item.querySelector('.command-palette__item-text').textContent.toLowerCase();
+            if (text.includes(lowerQuery) || query === '') {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    function updateActiveItem() {
+        items.forEach(function (item, i) {
+            if (item.style.display === 'none') return;
+            item.classList.toggle('command-palette__item--active', i === activeIndex);
+        });
+    }
+
+    function navigateToSection(sectionId) {
+        closePalette();
+        var target = document.getElementById(sectionId);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Keyboard shortcut to open
+    document.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            if (palette.hidden) {
+                openPalette();
+            } else {
+                closePalette();
+            }
+        }
+
+        if (e.key === 'Escape' && !palette.hidden) {
+            closePalette();
+        }
+    });
+
+    // Input filtering
+    input.addEventListener('input', function () {
+        filterResults(this.value);
+        activeIndex = -1;
+    });
+
+    // Keyboard navigation in palette
+    input.addEventListener('keydown', function (e) {
+        var visibleItems = Array.from(items).filter(function (item) {
+            return item.style.display !== 'none';
+        });
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            activeIndex = Math.min(activeIndex + 1, visibleItems.length - 1);
+            updateActiveItem();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            activeIndex = Math.max(activeIndex - 1, 0);
+            updateActiveItem();
+        } else if (e.key === 'Enter' && activeIndex >= 0) {
+            e.preventDefault();
+            var section = visibleItems[activeIndex].dataset.section;
+            navigateToSection(section);
+        }
+    });
+
+    // Click on items
+    items.forEach(function (item) {
+        item.addEventListener('click', function () {
+            navigateToSection(this.dataset.section);
+        });
+    });
+
+    // Close on backdrop click
+    palette.querySelector('.command-palette__backdrop').addEventListener('click', closePalette);
+
+    // Trigger button
+    if (triggerBtn) {
+        triggerBtn.addEventListener('click', openPalette);
+    }
+})();
+
+// ============================================
+// ADVANCED DARK MODE MODULE (3 Themes)
+// ============================================
+
+(function () {
+    'use strict';
+
+    var themeToggle = document.getElementById('theme-toggle');
+    var htmlElement = document.documentElement;
+
+    if (!themeToggle) return;
+
+    // Theme order: light -> dark -> system
+    var themes = ['light', 'dark', 'system'];
+    var currentThemeIndex = 0;
+
+    // Get saved theme or default to system
+    var savedTheme = localStorage.getItem('theme') || 'system';
+    currentThemeIndex = themes.indexOf(savedTheme);
+    if (currentThemeIndex === -1) currentThemeIndex = 2; // default to system
+
+    function applyTheme(theme) {
+        if (theme === 'system') {
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            htmlElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+            themeToggle.classList.add('theme-toggle--system');
+        } else {
+            htmlElement.setAttribute('data-theme', theme);
+            themeToggle.classList.remove('theme-toggle--system');
+        }
+    }
+
+    function cycleTheme() {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        var newTheme = themes[currentThemeIndex];
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    }
+
+    // Apply saved theme on load
+    applyTheme(themes[currentThemeIndex]);
+
+    // Toggle on click
+    themeToggle.addEventListener('click', cycleTheme);
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+        if (themes[currentThemeIndex] === 'system') {
+            applyTheme('system');
+        }
+    });
+})();
+
+// ============================================
+// AI ASSISTANT MODULE
+// ============================================
+
+(function () {
+    'use strict';
+
+    var toggle = document.getElementById('ai-toggle');
+    var chat = document.getElementById('ai-chat');
+    var minimize = document.getElementById('ai-minimize');
+    var messages = document.getElementById('ai-messages');
+    var form = document.getElementById('ai-form');
+    var input = document.getElementById('ai-input');
+    var suggestions = document.querySelectorAll('.ai-assistant__suggestion');
+
+    if (!toggle || !chat) return;
+
+    var responses = {
+        'what services do you offer?': 'We offer Web Development, Mobile Apps, UI/UX Design, Digital Marketing, Cloud Solutions, and AI Integration. Each service is tailored to your business needs.',
+        'how much does it cost?': 'Our plans start at $29/month for Starter, $79/month for Professional, and custom pricing for Enterprise. Would you like to see our pricing page?',
+        'how can i contact you?': 'You can reach us at info@novatech.com or call +1 (555) 123-4567. We respond within 24 hours!',
+        'default': 'Thanks for your message! Our team will get back to you shortly. In the meantime, feel free to explore our services or check out our FAQ.'
+    };
+
+    function addMessage(text, isUser) {
+        var messageDiv = document.createElement('div');
+        messageDiv.className = 'ai-assistant__message ai-assistant__message--' + (isUser ? 'user' : 'bot');
+
+        if (!isUser) {
+            messageDiv.innerHTML = '<span class="ai-assistant__message-avatar" aria-hidden="true">&#129302;</span>';
+        }
+
+        var contentDiv = document.createElement('div');
+        contentDiv.className = 'ai-assistant__message-content';
+        contentDiv.innerHTML = '<p>' + text + '</p>';
+        messageDiv.appendChild(contentDiv);
+
+        messages.appendChild(messageDiv);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function showTyping() {
+        var typingDiv = document.createElement('div');
+        typingDiv.className = 'ai-assistant__message ai-assistant__message--bot ai-typing-wrapper';
+        typingDiv.innerHTML = '<span class="ai-assistant__message-avatar" aria-hidden="true">&#129302;</span><div class="ai-typing"><span class="ai-typing__dot"></span><span class="ai-typing__dot"></span><span class="ai-typing__dot"></span></div>';
+        messages.appendChild(typingDiv);
+        messages.scrollTop = messages.scrollHeight;
+        return typingDiv;
+    }
+
+    function removeTyping(typingEl) {
+        if (typingEl && typingEl.parentNode) {
+            typingEl.parentNode.removeChild(typingEl);
+        }
+    }
+
+    function getResponse(question) {
+        var lower = question.toLowerCase();
+        for (var key in responses) {
+            if (key !== 'default' && lower.includes(key)) {
+                return responses[key];
+            }
+        }
+        return responses['default'];
+    }
+
+    function handleSend(text) {
+        if (!text.trim()) return;
+
+        addMessage(text, true);
+        input.value = '';
+
+        var typingEl = showTyping();
+
+        setTimeout(function () {
+            removeTyping(typingEl);
+            addMessage(getResponse(text), false);
+        }, 1200 + Math.random() * 800);
+    }
+
+    // Toggle chat
+    toggle.addEventListener('click', function () {
+        var isOpen = !chat.hidden;
+        chat.hidden = isOpen;
+        toggle.setAttribute('aria-expanded', !isOpen);
+    });
+
+    // Minimize
+    if (minimize) {
+        minimize.addEventListener('click', function () {
+            chat.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    }
+
+    // Form submit
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            handleSend(input.value);
+        });
+    }
+
+    // Suggestions
+    suggestions.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            handleSend(this.dataset.question);
+        });
+    });
+})();
+
+// ============================================
+// PAGE TRANSITIONS MODULE
+// ============================================
+
+(function () {
+    'use strict';
+
+    var transition = document.getElementById('page-transition');
+    if (!transition) return;
+
+    // On page load
+    transition.classList.add('page-transition--exit');
+
+    transition.addEventListener('animationend', function () {
+        transition.classList.remove('page-transition--exit');
+    });
+})();
+
+// ============================================
+// MICROINTERACTIONS MODULE
+// ============================================
+
+(function () {
+    'use strict';
+
+    // Magnetic button effect
+    var magneticBtns = document.querySelectorAll('.btn--primary, .hero__btn-primary');
+
+    if (window.matchMedia('(pointer: fine)').matches) {
+        magneticBtns.forEach(function (btn) {
+            btn.addEventListener('mousemove', function (e) {
+                var rect = this.getBoundingClientRect();
+                var x = e.clientX - rect.left - rect.width / 2;
+                var y = e.clientY - rect.top - rect.height / 2;
+                this.style.transform = 'translate(' + x * 0.2 + 'px, ' + y * 0.2 + 'px)';
+            });
+
+            btn.addEventListener('mouseleave', function () {
+                this.style.transform = '';
+            });
+        });
+    }
+
+    // Card tilt effect on hover
+    if (window.matchMedia('(pointer: fine)').matches) {
+        var tiltCards = document.querySelectorAll('.service-card, .feature-card, .pricing-card');
+
+        tiltCards.forEach(function (card) {
+            card.addEventListener('mousemove', function (e) {
+                var rect = this.getBoundingClientRect();
+                var x = (e.clientX - rect.left) / rect.width;
+                var y = (e.clientY - rect.top) / rect.height;
+                var tiltX = (y - 0.5) * 10;
+                var tiltY = (x - 0.5) * -10;
+                this.style.transform = 'perspective(1000px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateY(-8px)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = '';
+            });
+        });
+    }
+})();
