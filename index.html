@@ -1,984 +1,477 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Primary Meta Tags -->
-    <title>NovaTech - AI-Powered Business Solutions | Automate Your Work</title>
-    <meta name="title" content="NovaTech - AI-Powered Business Solutions | Automate Your Work">
-    <meta name="description" content="NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions. Trusted by 500+ businesses worldwide.">
-    <meta name="keywords" content="AI automation, business solutions, workflow automation, productivity, cloud services, web development, mobile apps">
-    <meta name="author" content="NovaTech">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://novatech.com/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://novatech.com/">
-    <meta property="og:title" content="NovaTech - AI-Powered Business Solutions">
-    <meta property="og:description" content="NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions.">
-    <meta property="og:image" content="https://novatech.com/images/og-image.png">
-    <meta property="og:site_name" content="NovaTech">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://novatech.com/">
-    <meta property="twitter:title" content="NovaTech - AI-Powered Business Solutions">
-    <meta property="twitter:description" content="NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions.">
-    <meta property="twitter:image" content="https://novatech.com/images/og-image.png">
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#2563eb">
-    <meta name="msapplication-TileColor" content="#2563eb">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Preconnect to external origins -->
+    <title>Velora - AI-Powered Business Solutions</title>
+    <meta name="description" content="Velora helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions.">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%232563eb' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='system-ui' font-size='18' font-weight='700'%3EN%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "NovaTech",
-        "url": "https://novatech.com",
-        "logo": "https://novatech.com/images/logo.png",
-        "description": "NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent AI automation solutions.",
-        "sameAs": [
-            "https://linkedin.com/company/novatech",
-            "https://github.com/novatech",
-            "https://twitter.com/novatech"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-555-123-4567",
-            "contactType": "sales",
-            "availableLanguage": "English"
-        }
-    }
-    </script>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Skip to Content Link (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Ambient Glow -->
+    <div class="ambient-glow" aria-hidden="true">
+        <div class="ambient-glow__orb ambient-glow__orb--1"></div>
+        <div class="ambient-glow__orb ambient-glow__orb--2"></div>
+        <div class="ambient-glow__orb ambient-glow__orb--3"></div>
+    </div>
 
     <!-- Loading Screen -->
     <div id="loader" class="loader" aria-hidden="true">
-        <div class="loader__content">
-            <div class="loader__logo-wrapper">
-                <span class="loader__logo">NovaTech</span>
-                <div class="loader__logo-glow"></div>
-            </div>
-            <div class="loader__bar">
-                <div class="loader__progress"></div>
-            </div>
-            <span class="loader__text">Loading experience...</span>
+        <div class="loader__inner">
+            <span class="loader__logo">Velora</span>
+            <div class="loader__bar"><div class="loader__progress"></div></div>
         </div>
     </div>
 
-    <!-- Page Transition Overlay -->
-    <div id="page-transition" class="page-transition" aria-hidden="true">
-        <div class="page-transition__layer"></div>
-    </div>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <a href="#hero" class="nav__logo">Velora</a>
+        <div id="nav-links" class="nav__links">
+            <a href="#hero" class="nav__link nav__link--active">Home</a>
+            <a href="#services" class="nav__link">Services</a>
+            <a href="#about" class="nav__link">About</a>
+            <a href="#pricing" class="nav__link">Pricing</a>
+            <a href="#contact" class="nav__link">Contact</a>
+        </div>
+        <div class="nav__actions">
+            <button id="theme-toggle" class="nav__theme-toggle" aria-label="Toggle theme">
+                <span class="icon-sun">&#9788;</span>
+                <span class="icon-moon">&#9790;</span>
+            </button>
+            <a href="#contact" class="nav__cta">Get Started</a>
+            <button id="hamburger" class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress">
-        <div class="scroll-progress__bar"></div>
-    </div>
-
-    <!-- Custom Cursor (Desktop Only) -->
-    <div id="cursor-dot" class="cursor cursor--dot" aria-hidden="true"></div>
-    <div id="cursor-ring" class="cursor cursor--ring" aria-hidden="true"></div>
-
-    <!-- Command Palette -->
-    <div id="command-palette" class="command-palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
-        <div class="command-palette__backdrop"></div>
-        <div class="command-palette__container">
-            <div class="command-palette__header">
-                <span class="command-palette__icon" aria-hidden="true">&#8984;</span>
-                <input
-                    type="text"
-                    id="command-input"
-                    class="command-palette__input"
-                    placeholder="Search sections, navigate..."
-                    autocomplete="off"
-                    aria-label="Search sections"
-                >
-                <kbd class="command-palette__kbd">ESC</kbd>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="container hero__container">
+            <div class="hero__content">
+                <span class="hero__badge">&#10003; Trusted by 500+ Businesses</span>
+                <h1 class="hero__title">Automate Your Work with <span class="gradient-text">AI-Powered</span> Intelligence</h1>
+                <p class="hero__desc">Velora helps businesses streamline workflows, boost productivity, and scale faster with intelligent automation solutions built for the future.</p>
+                <div class="hero__ctas">
+                    <a href="#contact" class="btn btn--primary">Get Started <span>&rarr;</span></a>
+                    <a href="#about" class="btn btn--glass"><span>&#9654;</span> Watch Demo</a>
+                </div>
+                <div class="hero__stats">
+                    <div class="hero__stat"><span class="hero__stat-num">500+</span><span class="hero__stat-label">Projects Done</span></div>
+                    <div class="hero__stat"><span class="hero__stat-num">150+</span><span class="hero__stat-label">Happy Clients</span></div>
+                    <div class="hero__stat"><span class="hero__stat-num">4.9</span><span class="hero__stat-label">Average Rating</span></div>
+                </div>
             </div>
-            <ul id="command-results" class="command-palette__results" role="listbox">
-                <li class="command-palette__item" role="option" data-section="hero">
-                    <span class="command-palette__item-icon" aria-hidden="true">&#127968;</span>
-                    <span class="command-palette__item-text">Home</span>
-                    <span class="command-palette__item-shortcut">Go to top</span>
-                </li>
-                <li class="command-palette__item" role="option" data-section="services">
-                    <span class="command-palette__item-icon" aria-hidden="true">&#128187;</span>
-                    <span class="command-palette__item-text">Services</span>
-                    <span class="command-palette__item-shortcut">Our offerings</span>
-                </li>
-                <li class="command-palette__item" role="option" data-section="about">
-                    <span class="command-palette__item-icon" aria-hidden="true">&#127970;</span>
-                    <span class="command-palette__item-text">About</span>
-                    <span class="command-palette__item-shortcut">Learn more</span>
-                </li>
-                <li class="command-palette__item" role="option" data-section="pricing">
-                    <span class="command-palette__item-icon" aria-hidden="true">&#128176;</span>
-                    <span class="command-palette__item-text">Pricing</span>
-                    <span class="command-palette__item-shortcut">View plans</span>
-                </li>
-                <li class="command-palette__item" role="option" data-section="faq">
-                    <span class="command-palette__item-icon" aria-hidden="true">&#10067;</span>
-                    <span class="command-palette__item-text">FAQ</span>
-                    <span class="command-palette__item-shortcut">Common questions</span>
-                </li>
-                <li class="command-palette__item" role="option" data-section="contact">
-                    <span class="command-palette__item-icon" aria-hidden="true">&#128231;</span>
-                    <span class="command-palette__item-text">Contact</span>
-                    <span class="command-palette__item-shortcut">Get in touch</span>
-                </li>
-            </ul>
-            <div class="command-palette__footer">
-                <span>&#8593;&#8595; Navigate</span>
-                <span>&#9166; Select</span>
-                <span>ESC Close</span>
+            <div class="hero__visual">
+                <div class="hero__image-wrap">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=580&h=420&fit=crop&auto=format" alt="Velora AI dashboard" class="hero__image" width="580" height="420" loading="eager">
+                    <div class="hero__float hero__float--1">&#128640; Workflow Automated</div>
+                    <div class="hero__float hero__float--2">&#128200; +47% Productivity</div>
+                    <div class="hero__float hero__float--3">&#9989; 99.9% Uptime</div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- AI Assistant Widget -->
-    <div id="ai-assistant" class="ai-assistant" role="complementary" aria-label="AI Assistant">
-        <button id="ai-toggle" class="ai-assistant__toggle" aria-label="Open AI assistant" aria-expanded="false">
-            <span class="ai-assistant__toggle-icon" aria-hidden="true">&#129302;</span>
-            <span class="ai-assistant__toggle-pulse"></span>
-        </button>
-        <div id="ai-chat" class="ai-assistant__chat" hidden>
-            <div class="ai-assistant__header">
-                <div class="ai-assistant__header-info">
-                    <span class="ai-assistant__avatar" aria-hidden="true">&#129302;</span>
-                    <div>
-                        <span class="ai-assistant__name">NovaBot</span>
-                        <span class="ai-assistant__status">Online</span>
-                    </div>
-                </div>
-                <button id="ai-minimize" class="ai-assistant__minimize" aria-label="Minimize chat">&#8722;</button>
-            </div>
-            <div id="ai-messages" class="ai-assistant__messages">
-                <div class="ai-assistant__message ai-assistant__message--bot">
-                    <span class="ai-assistant__message-avatar" aria-hidden="true">&#129302;</span>
-                    <div class="ai-assistant__message-content">
-                        <p>Hi! I'm NovaBot, your AI assistant. How can I help you today?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="ai-assistant__suggestions">
-                <button class="ai-assistant__suggestion" data-question="What services do you offer?">What services do you offer?</button>
-                <button class="ai-assistant__suggestion" data-question="How much does it cost?">Pricing info</button>
-                <button class="ai-assistant__suggestion" data-question="How can I contact you?">Contact details</button>
-            </div>
-            <form id="ai-form" class="ai-assistant__form">
-                <input type="text" id="ai-input" class="ai-assistant__input" placeholder="Ask me anything..." aria-label="Type your message">
-                <button type="submit" class="ai-assistant__send" aria-label="Send message">
-                    <span aria-hidden="true">&#10148;</span>
-                </button>
-            </form>
+        <div class="hero__scroll" aria-hidden="true">
+            <span>Scroll to explore</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
         </div>
-    </div>
+    </section>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
-        <span class="back-to-top__icon" aria-hidden="true">&#8593;</span>
-    </button>
-
-    <!-- Header -->
-    <header id="header" class="header">
-        <nav id="navbar" class="navbar" aria-label="Main navigation">
-            <a href="#hero" class="logo" aria-label="BrandName - Home">
-                <span class="logo__text">BrandName</span>
-            </a>
-
-            <ul id="nav-links" class="nav__links" role="list">
-                <li class="nav__item"><a href="#hero" class="nav__link nav__link--active">Home</a></li>
-                <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-                <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
-                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-            </ul>
-
-            <a href="#contact" class="btn btn--primary nav__cta">Get Started</a>
-
-            <button
-                id="theme-toggle"
-                class="theme-toggle"
-                type="button"
-                aria-label="Toggle dark mode"
-                title="Toggle theme (Light/Dark/System)"
-            >
-                <span class="theme-toggle__icon theme-toggle__icon--light" aria-hidden="true">&#9788;</span>
-                <span class="theme-toggle__icon theme-toggle__icon--dark" aria-hidden="true">&#9790;</span>
-                <span class="theme-toggle__icon theme-toggle__icon--system" aria-hidden="true">&#9881;</span>
-            </button>
-
-            <button id="cmd-palette-btn" class="cmd-palette-trigger" type="button" aria-label="Open command palette" title="Command palette (Ctrl+K)">
-                <span aria-hidden="true">&#8984;K</span>
-            </button>
-
-            <button
-                id="hamburger"
-                class="hamburger"
-                type="button"
-                aria-label="Toggle navigation menu"
-                aria-expanded="false"
-                aria-controls="nav-links"
-            >
-                <span class="hamburger__line"></span>
-                <span class="hamburger__line"></span>
-                <span class="hamburger__line"></span>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content">
-
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero__bg-shape" aria-hidden="true"></div>
-            <div class="container hero__container">
-                <div class="hero__content">
-                    <span class="hero__badge">
-                        <span class="hero__badge-icon" aria-hidden="true">&#10003;</span>
-                        Trusted by 500+ Businesses
-                    </span>
-                    <h1 class="hero__title">
-                        Automate Your Work with
-                        <span class="hero__title-highlight">AI-Powered</span>
-                        Intelligence
-                    </h1>
-                    <p class="hero__description">
-                        NovaTech helps businesses streamline workflows, boost productivity, and scale faster with intelligent automation solutions built for the future.
-                    </p>
-                    <div class="hero__buttons">
-                        <a href="#contact" class="btn btn--primary hero__btn-primary">
-                            Get Started
-                            <span class="hero__btn-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                        <a href="#about" class="btn btn--secondary hero__btn-secondary">
-                            <span class="hero__btn-play" aria-hidden="true">&#9654;</span>
-                            Watch Demo
-                        </a>
-                    </div>
-                    <div class="hero__stats" aria-label="Company statistics">
-                        <div class="hero__stat">
-                            <span class="hero__stat-number">500+</span>
-                            <span class="hero__stat-label">Projects Done</span>
-                        </div>
-                        <div class="hero__stat">
-                            <span class="hero__stat-number">150+</span>
-                            <span class="hero__stat-label">Happy Clients</span>
-                        </div>
-                        <div class="hero__stat">
-                            <span class="hero__stat-number">4.9</span>
-                            <span class="hero__stat-label">Average Rating</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__visual">
-                    <div class="hero__image-wrapper">
-                        <img
-                            src="images/hero-dashboard.png"
-                            data-lazy="images/hero-dashboard.png"
-                            alt="NovaTech AI dashboard showing workflow automation metrics and analytics"
-                            class="hero__image"
-                            width="580"
-                            height="420"
-                        >
-                        <div class="hero__floating-card hero__floating-card--top" aria-hidden="true">
-                            <span class="hero__floating-icon">&#128640;</span>
-                            <span class="hero__floating-text">Workflow Automated</span>
-                        </div>
-                        <div class="hero__floating-card hero__floating-card--bottom" aria-hidden="true">
-                            <span class="hero__floating-icon">&#128200;</span>
-                            <span class="hero__floating-text">+47% Productivity</span>
-                        </div>
-                        <div class="hero__floating-card hero__floating-card--right" aria-hidden="true">
-                            <span class="hero__floating-icon">&#9989;</span>
-                            <span class="hero__floating-text">99.9% Uptime</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Trusted Companies -->
+    <section id="trusted" class="section section--trusted">
+        <div class="container">
+            <p class="section__label">Trusted by Leading Companies</p>
+            <div class="trusted__grid">
+                <div class="trusted__item">Google</div>
+                <div class="trusted__item">Microsoft</div>
+                <div class="trusted__item">Spotify</div>
+                <div class="trusted__item">Slack</div>
+                <div class="trusted__item">Adobe</div>
+                <div class="trusted__item">Netflix</div>
+                <div class="trusted__item">Airbnb</div>
+                <div class="trusted__item">Notion</div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Trusted Companies -->
-        <section id="trusted-companies" class="trusted" aria-labelledby="trusted-heading">
-            <div class="container">
-                <p id="trusted-heading" class="trusted__label">Trusted by Leading Companies</p>
-                <div class="trusted__logos" role="list" aria-label="Trusted companies">
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Google">Google</span>
-                    </div>
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Microsoft">Microsoft</span>
-                    </div>
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Spotify">Spotify</span>
-                    </div>
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Slack">Slack</span>
-                    </div>
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Adobe">Adobe</span>
-                    </div>
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Netflix">Netflix</span>
-                    </div>
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Airbnb">Airbnb</span>
-                    </div>
-                    <div class="trusted__logo-card" role="listitem">
-                        <span class="trusted__logo-text" aria-label="Notion">Notion</span>
-                    </div>
-                </div>
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <span class="section__label">What We Do</span>
+            <h2 class="section__title">Our Services</h2>
+            <p class="section__desc">We provide end-to-end digital solutions that help businesses innovate, scale, and succeed.</p>
+            <div class="cards-grid cards-grid--3">
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#128187;</div>
+                    <h3 class="glass-card__title">Web Development</h3>
+                    <p class="glass-card__text">Custom web applications built with React, Vue, and Node.js for optimal performance and scalability.</p>
+                    <a href="#contact" class="glass-card__link">Learn More &rarr;</a>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#128241;</div>
+                    <h3 class="glass-card__title">Mobile App Development</h3>
+                    <p class="glass-card__text">Native iOS and Android applications plus cross-platform solutions using Flutter and React Native.</p>
+                    <a href="#contact" class="glass-card__link">Learn More &rarr;</a>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#127912;</div>
+                    <h3 class="glass-card__title">UI/UX Design</h3>
+                    <p class="glass-card__text">User-centered design that transforms complex workflows into intuitive, engaging digital experiences.</p>
+                    <a href="#contact" class="glass-card__link">Learn More &rarr;</a>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#128640;</div>
+                    <h3 class="glass-card__title">Digital Marketing</h3>
+                    <p class="glass-card__text">Data-driven SEO, PPC, and content strategies that increase visibility, traffic, and conversions.</p>
+                    <a href="#contact" class="glass-card__link">Learn More &rarr;</a>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#9729;&#65039;</div>
+                    <h3 class="glass-card__title">Cloud Solutions</h3>
+                    <p class="glass-card__text">Scalable AWS, Azure, and GCP infrastructure with migration, optimization, and 24/7 management.</p>
+                    <a href="#contact" class="glass-card__link">Learn More &rarr;</a>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#129302;</div>
+                    <h3 class="glass-card__title">AI Automation</h3>
+                    <p class="glass-card__text">Intelligent workflows, chatbots, and ML solutions that automate repetitive tasks and boost productivity.</p>
+                    <a href="#contact" class="glass-card__link">Learn More &rarr;</a>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services -->
-        <section id="services" class="services" aria-labelledby="services-heading" data-reveal="fade-up">
-            <div class="container">
-                <h2 id="services-heading" class="section__title">Our Services</h2>
-                <p class="section__subtitle">We provide end-to-end digital solutions that help businesses innovate, scale, and succeed in today's competitive landscape.</p>
-                <div class="services__grid" role="list">
-                    <article class="service-card" role="listitem">
-                        <div class="service-card__icon" aria-hidden="true">
-                            <span class="service-card__icon-symbol">&#128187;</span>
-                        </div>
-                        <h3 class="service-card__title">Web Development</h3>
-                        <p class="service-card__description">Custom web applications built with React, Vue, and Node.js for optimal performance, scalability, and user experience.</p>
-                        <a href="#contact" class="service-card__link">
-                            Learn More
-                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </article>
-                    <article class="service-card" role="listitem">
-                        <div class="service-card__icon" aria-hidden="true">
-                            <span class="service-card__icon-symbol">&#128241;</span>
-                        </div>
-                        <h3 class="service-card__title">Mobile App Development</h3>
-                        <p class="service-card__description">Native iOS and Android applications plus cross-platform solutions using Flutter and React Native.</p>
-                        <a href="#contact" class="service-card__link">
-                            Learn More
-                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </article>
-                    <article class="service-card" role="listitem">
-                        <div class="service-card__icon" aria-hidden="true">
-                            <span class="service-card__icon-symbol">&#127912;</span>
-                        </div>
-                        <h3 class="service-card__title">UI/UX Design</h3>
-                        <p class="service-card__description">User-centered design that transforms complex workflows into intuitive, engaging digital experiences.</p>
-                        <a href="#contact" class="service-card__link">
-                            Learn More
-                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </article>
-                    <article class="service-card" role="listitem">
-                        <div class="service-card__icon" aria-hidden="true">
-                            <span class="service-card__icon-symbol">&#128640;</span>
-                        </div>
-                        <h3 class="service-card__title">Digital Marketing</h3>
-                        <p class="service-card__description">Data-driven SEO, PPC, and content strategies that increase visibility, traffic, and conversions.</p>
-                        <a href="#contact" class="service-card__link">
-                            Learn More
-                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </article>
-                    <article class="service-card" role="listitem">
-                        <div class="service-card__icon" aria-hidden="true">
-                            <span class="service-card__icon-symbol">&#9729;&#65039;</span>
-                        </div>
-                        <h3 class="service-card__title">Cloud Solutions</h3>
-                        <p class="service-card__description">Scalable AWS, Azure, and GCP infrastructure with migration, optimization, and 24/7 management services.</p>
-                        <a href="#contact" class="service-card__link">
-                            Learn More
-                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </article>
-                    <article class="service-card" role="listitem">
-                        <div class="service-card__icon" aria-hidden="true">
-                            <span class="service-card__icon-symbol">&#129302;</span>
-                        </div>
-                        <h3 class="service-card__title">AI Automation</h3>
-                        <p class="service-card__description">Intelligent workflows, chatbots, and machine learning solutions that automate repetitive tasks and boost productivity.</p>
-                        <a href="#contact" class="service-card__link">
-                            Learn More
-                            <span class="service-card__link-arrow" aria-hidden="true">&#8594;</span>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us -->
-        <section id="about" class="about" aria-labelledby="about-heading">
-            <div class="container about__container">
-                <div class="about__visual">
-                    <div class="about__image-wrapper">
-                        <div class="about__image-bg" aria-hidden="true"></div>
-                        <img
-                            src="images/about-team.png"
-                            alt="NovaTech team collaborating on innovative technology solutions in a modern workspace"
-                            class="about__image"
-                            width="520"
-                            height="440"
-                        >
-                        <div class="about__experience-badge" aria-label="10 years of experience">
-                            <span class="about__experience-number">10+</span>
-                            <span class="about__experience-text">Years Experience</span>
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__visual" data-reveal="fade-right">
+                    <div class="about__image-wrap">
+                        <canvas class="about__particles" aria-hidden="true"></canvas>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=640&h=520&fit=crop&auto=format&q=90" alt="Velora team collaborating in modern office" class="about__image" width="640" height="520" loading="lazy">
+                        <div class="about__overlay"></div>
+                        <button class="about__play" aria-label="Play company introduction video">
+                            <span class="about__play-ring"></span>
+                            <svg class="about__play-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+                        </button>
+                        <div class="about__stats-card">
+                            <div class="about__stats-item">
+                                <span class="about__stats-num">10+</span>
+                                <span class="about__stats-label">Years</span>
+                            </div>
+                            <div class="about__stats-divider"></div>
+                            <div class="about__stats-item">
+                                <span class="about__stats-num">500+</span>
+                                <span class="about__stats-label">Clients</span>
+                            </div>
+                            <div class="about__stats-divider"></div>
+                            <div class="about__stats-item">
+                                <span class="about__stats-num">98%</span>
+                                <span class="about__stats-label">Satisfaction</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about__content">
-                    <span class="about__subtitle">About Us</span>
-                    <h2 id="about-heading" class="about__title">Empowering Businesses Through Smart Technology</h2>
-                    <p class="about__description">At NovaTech, we believe technology should work for you, not against you. Our team of expert developers, designers, and strategists combines deep technical expertise with a customer-first approach to deliver solutions that drive real results.</p>
-                    <p class="about__description">With over a decade of experience serving businesses across industries, we've mastered the art of transforming complex challenges into elegant, scalable solutions. Our commitment to innovation and excellence has earned the trust of 500+ companies worldwide.</p>
-                    <ul class="about__features" role="list">
-                        <li class="about__feature">
-                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
-                            <span class="about__feature-text">Expert Development Team</span>
-                        </li>
-                        <li class="about__feature">
-                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
-                            <span class="about__feature-text">AI-Powered Solutions</span>
-                        </li>
-                        <li class="about__feature">
-                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
-                            <span class="about__feature-text">Secure &amp; Scalable Platforms</span>
-                        </li>
-                        <li class="about__feature">
-                            <span class="about__feature-icon" aria-hidden="true">&#10003;</span>
-                            <span class="about__feature-text">24/7 Customer Support</span>
-                        </li>
+                <div class="about__content" data-reveal="fade-left">
+                    <span class="section__label">About Us</span>
+                    <h2 class="section__title section__title--left">Empowering Businesses Through Smart Technology</h2>
+                    <p class="about__text">At Velora, we believe technology should work for you, not against you. Our team of expert developers, designers, and strategists combines deep technical expertise with a customer-first approach.</p>
+                    <p class="about__text">With over a decade of experience serving businesses across industries, we've mastered the art of transforming complex challenges into elegant, scalable solutions.</p>
+                    <ul class="about__features">
+                        <li>&#10003; Expert Development Team</li>
+                        <li>&#10003; AI-Powered Solutions</li>
+                        <li>&#10003; Secure &amp; Scalable Platforms</li>
+                        <li>&#10003; 24/7 Customer Support</li>
                     </ul>
-                    <a href="#contact" class="btn btn--primary about__cta">
-                        Learn More
-                        <span class="about__cta-arrow" aria-hidden="true">&#8594;</span>
-                    </a>
+                    <a href="#contact" class="btn btn--primary">Learn More <span>&rarr;</span></a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Why Choose Us -->
-        <section id="why-choose-us" class="features" aria-labelledby="features-heading" data-reveal="fade-up">
-            <div class="container">
-                <h2 id="features-heading" class="section__title">Why Choose NovaTech</h2>
-                <p class="section__subtitle">We combine innovation, technology, and expertise to help businesses grow faster.</p>
-                <div class="features__grid" role="list">
-                    <article class="feature-card" role="listitem">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <span class="feature-card__icon-symbol">&#128104;&#8205;&#128187;</span>
-                        </div>
-                        <h3 class="feature-card__title">Expert Team</h3>
-                        <p class="feature-card__description">Our senior developers and architects bring 10+ years of combined experience to every project, ensuring enterprise-grade solutions.</p>
-                    </article>
-                    <article class="feature-card" role="listitem">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <span class="feature-card__icon-symbol">&#129302;</span>
-                        </div>
-                        <h3 class="feature-card__title">AI Automation</h3>
-                        <p class="feature-card__description">Leverage intelligent workflows and machine learning to automate repetitive tasks, reducing operational costs by up to 40%.</p>
-                    </article>
-                    <article class="feature-card" role="listitem">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <span class="feature-card__icon-symbol">&#9201;&#65039;</span>
-                        </div>
-                        <h3 class="feature-card__title">Fast Delivery</h3>
-                        <p class="feature-card__description">Agile methodology and dedicated sprints ensure on-time delivery without compromising quality or attention to detail.</p>
-                    </article>
-                    <article class="feature-card" role="listitem">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <span class="feature-card__icon-symbol">&#128274;</span>
-                        </div>
-                        <h3 class="feature-card__title">Secure Platform</h3>
-                        <p class="feature-card__description">SOC 2 compliant infrastructure with end-to-end encryption, regular security audits, and GDPR-ready data handling.</p>
-                    </article>
-                    <article class="feature-card" role="listitem">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <span class="feature-card__icon-symbol">&#128222;</span>
-                        </div>
-                        <h3 class="feature-card__title">24/7 Support</h3>
-                        <p class="feature-card__description">Round-the-clock technical support with dedicated account managers and guaranteed response times under 2 hours.</p>
-                    </article>
-                    <article class="feature-card" role="listitem">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <span class="feature-card__icon-symbol">&#128200;</span>
-                        </div>
-                        <h3 class="feature-card__title">Scalable Solutions</h3>
-                        <p class="feature-card__description">Cloud-native architecture that grows with your business, supporting 10x traffic spikes without performance degradation.</p>
-                    </article>
-                </div>
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-label="Company introduction video">
+        <div class="video-modal__backdrop"></div>
+        <div class="video-modal__container">
+            <button class="video-modal__close" aria-label="Close video">&times;</button>
+            <div class="video-modal__wrapper">
+                <iframe id="video-modal-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+                <video id="video-modal-mp4" class="video-modal__mp4" controls playsinline preload="none">
+                    <source src="assets/videos/company-demo.mp4" type="video/mp4">
+                </video>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- Statistics -->
-        <section id="statistics" class="stats" aria-labelledby="stats-heading" data-reveal="zoom-in">
-            <div class="container">
-                <h2 id="stats-heading" class="section__title">Our Impact in Numbers</h2>
-                <p class="section__subtitle">Helping businesses worldwide through innovation and technology.</p>
-                <div class="stats__grid" role="list">
-                    <article class="stat-card" role="listitem">
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <span class="stat-card__icon-symbol">&#128196;</span>
-                        </div>
-                        <span class="stat-card__number" data-target="500" data-suffix="+">0</span>
-                        <span class="stat-card__label">Projects Completed</span>
-                    </article>
-                    <article class="stat-card" role="listitem">
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <span class="stat-card__icon-symbol">&#128522;</span>
-                        </div>
-                        <span class="stat-card__number" data-target="250" data-suffix="+">0</span>
-                        <span class="stat-card__label">Happy Clients</span>
-                    </article>
-                    <article class="stat-card" role="listitem">
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <span class="stat-card__icon-symbol">&#127758;</span>
-                        </div>
-                        <span class="stat-card__number" data-target="20" data-suffix="+">0</span>
-                        <span class="stat-card__label">Countries Served</span>
-                    </article>
-                    <article class="stat-card" role="listitem">
-                        <div class="stat-card__icon" aria-hidden="true">
-                            <span class="stat-card__icon-symbol">&#11088;</span>
-                        </div>
-                        <span class="stat-card__number" data-target="99" data-suffix="%">0</span>
-                        <span class="stat-card__label">Client Satisfaction</span>
-                    </article>
-                </div>
+    <!-- Why Choose Us -->
+    <section id="features" class="section">
+        <div class="container">
+            <span class="section__label">Why Velora</span>
+            <h2 class="section__title">Why Choose Velora</h2>
+            <p class="section__desc">We combine innovation, technology, and expertise to help businesses grow faster.</p>
+            <div class="cards-grid cards-grid--3">
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#128104;&#8205;&#128187;</div>
+                    <h3 class="glass-card__title">Expert Team</h3>
+                    <p class="glass-card__text">Our senior developers and architects bring 10+ years of combined experience to every project.</p>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#129302;</div>
+                    <h3 class="glass-card__title">AI Automation</h3>
+                    <p class="glass-card__text">Leverage intelligent workflows and machine learning to automate repetitive tasks, reducing costs by 40%.</p>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#9201;&#65039;</div>
+                    <h3 class="glass-card__title">Fast Delivery</h3>
+                    <p class="glass-card__text">Agile methodology and dedicated sprints ensure on-time delivery without compromising quality.</p>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#128274;</div>
+                    <h3 class="glass-card__title">Secure Platform</h3>
+                    <p class="glass-card__text">SOC 2 compliant infrastructure with end-to-end encryption and GDPR-ready data handling.</p>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#128222;</div>
+                    <h3 class="glass-card__title">24/7 Support</h3>
+                    <p class="glass-card__text">Round-the-clock technical support with dedicated account managers and response times under 2 hours.</p>
+                </article>
+                <article class="glass-card" data-reveal>
+                    <div class="glass-card__icon">&#128200;</div>
+                    <h3 class="glass-card__title">Scalable Solutions</h3>
+                    <p class="glass-card__text">Cloud-native architecture that grows with your business, supporting 10x traffic spikes.</p>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Testimonials -->
-        <section id="testimonials" class="testimonials" aria-labelledby="testimonials-heading" data-reveal="fade-left">
-            <div class="container">
-                <h2 id="testimonials-heading" class="section__title">What Our Clients Say</h2>
-                <p class="section__subtitle">See how businesses around the world have grown with NovaTech.</p>
-                <div class="testimonials__grid" role="list">
-                    <article class="testimonial-card" role="listitem">
-                        <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            <p>"NovaTech transformed our workflow and helped us scale faster than ever."</p>
-                        </blockquote>
-                        <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar-wrapper">
-                                <img
-                                    src="images/client-sarah.png"
-                                    data-lazy="images/client-sarah.png"
-                                    alt="Sarah Johnson, CEO of TechWave"
-                                    class="testimonial-card__avatar"
-                                    width="56"
-                                    height="56"
-                                >
-                            </div>
-                            <div class="testimonial-card__info">
-                                <cite class="testimonial-card__name">Sarah Johnson</cite>
-                                <span class="testimonial-card__role">CEO</span>
-                                <span class="testimonial-card__company">TechWave</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="testimonial-card" role="listitem">
-                        <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            <p>"The team delivered outstanding results with exceptional professionalism."</p>
-                        </blockquote>
-                        <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar-wrapper">
-                                <img
-                                    src="images/client-michael.png"
-                                    data-lazy="images/client-michael.png"
-                                    alt="Michael Chen, Founder of CloudEdge"
-                                    class="testimonial-card__avatar"
-                                    width="56"
-                                    height="56"
-                                >
-                            </div>
-                            <div class="testimonial-card__info">
-                                <cite class="testimonial-card__name">Michael Chen</cite>
-                                <span class="testimonial-card__role">Founder</span>
-                                <span class="testimonial-card__company">CloudEdge</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="testimonial-card" role="listitem">
-                        <div class="testimonial-card__rating" aria-label="5 out of 5 stars">
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                            <span class="testimonial-card__star" aria-hidden="true">&#11088;</span>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            <p>"Our productivity increased dramatically after implementing NovaTech's AI solutions."</p>
-                        </blockquote>
-                        <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar-wrapper">
-                                <img
-                                    src="images/client-emily.png"
-                                    data-lazy="images/client-emily.png"
-                                    alt="Emily Rodriguez, Marketing Director at BrightLabs"
-                                    class="testimonial-card__avatar"
-                                    width="56"
-                                    height="56"
-                                >
-                            </div>
-                            <div class="testimonial-card__info">
-                                <cite class="testimonial-card__name">Emily Rodriguez</cite>
-                                <span class="testimonial-card__role">Marketing Director</span>
-                                <span class="testimonial-card__company">BrightLabs</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+    <!-- Statistics -->
+    <section id="statistics" class="section">
+        <div class="container">
+            <span class="section__label">Our Impact</span>
+            <h2 class="section__title">Our Impact in Numbers</h2>
+            <p class="section__desc">Helping businesses worldwide through innovation and technology.</p>
+            <div class="stats-grid">
+                <article class="stat-card" data-reveal>
+                    <div class="stat-card__icon">&#128196;</div>
+                    <span class="stat-card__number" data-target="500" data-suffix="+">0</span>
+                    <span class="stat-card__label">Projects Completed</span>
+                </article>
+                <article class="stat-card" data-reveal>
+                    <div class="stat-card__icon">&#128522;</div>
+                    <span class="stat-card__number" data-target="250" data-suffix="+">0</span>
+                    <span class="stat-card__label">Happy Clients</span>
+                </article>
+                <article class="stat-card" data-reveal>
+                    <div class="stat-card__icon">&#127758;</div>
+                    <span class="stat-card__number" data-target="20" data-suffix="+">0</span>
+                    <span class="stat-card__label">Countries Served</span>
+                </article>
+                <article class="stat-card" data-reveal>
+                    <div class="stat-card__icon">&#11088;</div>
+                    <span class="stat-card__number" data-target="99" data-suffix="%">0</span>
+                    <span class="stat-card__label">Client Satisfaction</span>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Pricing -->
-        <section id="pricing" class="pricing" aria-labelledby="pricing-heading" data-reveal="fade-right">
-            <div class="container">
-                <h2 id="pricing-heading" class="section__title">Simple, Transparent Pricing</h2>
-                <p class="section__subtitle">Choose the perfect plan for your business growth.</p>
-                <div class="pricing__grid" role="list">
-                    <!-- Starter Plan -->
-                    <article class="pricing-card" role="listitem">
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__title">Starter</h3>
-                            <p class="pricing-card__description">Perfect for small projects and individuals.</p>
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <span class="section__label">Testimonials</span>
+            <h2 class="section__title">What Our Clients Say</h2>
+            <p class="section__desc">See how businesses around the world have grown with Velora.</p>
+            <div class="cards-grid cards-grid--3">
+                <article class="glass-card testimonial-card" data-reveal>
+                    <div class="testimonial-card__stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+                    <blockquote class="testimonial-card__quote">"Velora transformed our workflow and helped us scale faster than ever."</blockquote>
+                    <div class="testimonial-card__author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=112&h=112&fit=crop&auto=format" alt="Sarah Johnson" class="testimonial-card__avatar" width="48" height="48" loading="lazy">
+                        <div>
+                            <cite class="testimonial-card__name">Sarah Johnson</cite>
+                            <span class="testimonial-card__role">CEO, TechWave</span>
                         </div>
-                        <div class="pricing-card__price">
-                            <span class="pricing-card__currency">$</span>
-                            <span class="pricing-card__amount">29</span>
-                            <span class="pricing-card__period">/month</span>
+                    </div>
+                </article>
+                <article class="glass-card testimonial-card" data-reveal>
+                    <div class="testimonial-card__stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+                    <blockquote class="testimonial-card__quote">"The team delivered outstanding results with exceptional professionalism."</blockquote>
+                    <div class="testimonial-card__author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&h=112&fit=crop&auto=format" alt="Michael Chen" class="testimonial-card__avatar" width="48" height="48" loading="lazy">
+                        <div>
+                            <cite class="testimonial-card__name">Michael Chen</cite>
+                            <span class="testimonial-card__role">Founder, CloudEdge</span>
                         </div>
-                        <ul class="pricing-card__features" role="list">
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                5 Projects
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Email Support
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Basic Analytics
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Cloud Storage
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Community Access
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn btn--secondary pricing-card__cta">Get Started</a>
-                    </article>
-
-                    <!-- Professional Plan (Featured) -->
-                    <article class="pricing-card pricing-card--featured" role="listitem">
-                        <div class="pricing-card__badge" aria-label="Most Popular plan">Most Popular</div>
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__title">Professional</h3>
-                            <p class="pricing-card__description">Best for growing teams and businesses.</p>
+                    </div>
+                </article>
+                <article class="glass-card testimonial-card" data-reveal>
+                    <div class="testimonial-card__stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+                    <blockquote class="testimonial-card__quote">"Our productivity increased dramatically after implementing Velora's AI solutions."</blockquote>
+                    <div class="testimonial-card__author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&h=112&fit=crop&auto=format" alt="Emily Rodriguez" class="testimonial-card__avatar" width="48" height="48" loading="lazy">
+                        <div>
+                            <cite class="testimonial-card__name">Emily Rodriguez</cite>
+                            <span class="testimonial-card__role">Marketing Director, BrightLabs</span>
                         </div>
-                        <div class="pricing-card__price">
-                            <span class="pricing-card__currency">$</span>
-                            <span class="pricing-card__amount">79</span>
-                            <span class="pricing-card__period">/month</span>
-                        </div>
-                        <ul class="pricing-card__features" role="list">
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Unlimited Projects
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Priority Support
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Advanced Analytics
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                AI Automation
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Team Collaboration
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                API Access
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn btn--primary pricing-card__cta">Start Free Trial</a>
-                    </article>
-
-                    <!-- Enterprise Plan -->
-                    <article class="pricing-card" role="listitem">
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__title">Enterprise</h3>
-                            <p class="pricing-card__description">For large organizations with custom needs.</p>
-                        </div>
-                        <div class="pricing-card__price">
-                            <span class="pricing-card__amount pricing-card__amount--custom">Custom</span>
-                        </div>
-                        <ul class="pricing-card__features" role="list">
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Everything in Professional
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Dedicated Account Manager
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Custom Integrations
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Enterprise Security
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                SLA Support
-                            </li>
-                            <li class="pricing-card__feature">
-                                <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
-                                Unlimited Team Members
-                            </li>
-                        </ul>
-                        <a href="#contact" class="btn btn--secondary pricing-card__cta">Contact Sales</a>
-                    </article>
-                </div>
+                    </div>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FAQ -->
-        <section id="faq" class="faq" aria-labelledby="faq-heading" data-reveal="fade-up">
-            <div class="container">
-                <h2 id="faq-heading" class="section__title">Frequently Asked Questions</h2>
-                <p class="section__subtitle">Everything you need to know before working with NovaTech.</p>
-                <div class="faq__list" role="list">
-                    <article class="faq-item" role="listitem">
-                        <h3>
-                            <button
-                                class="faq-item__toggle"
-                                aria-expanded="false"
-                                aria-controls="faq-answer-1"
-                                id="faq-question-1"
-                            >
-                                <span class="faq-item__question">What services does NovaTech provide?</span>
-                                <span class="faq-item__icon" aria-hidden="true"></span>
-                            </button>
-                        </h3>
-                        <div
-                            class="faq-item__answer"
-                            id="faq-answer-1"
-                            role="region"
-                            aria-labelledby="faq-question-1"
-                        >
-                            <p>NovaTech offers end-to-end digital solutions including web development, mobile app development, UI/UX design, digital marketing, cloud infrastructure, and AI integration. We tailor our services to meet each client's unique business goals.</p>
-                        </div>
-                    </article>
-                    <article class="faq-item" role="listitem">
-                        <h3>
-                            <button
-                                class="faq-item__toggle"
-                                aria-expanded="false"
-                                aria-controls="faq-answer-2"
-                                id="faq-question-2"
-                            >
-                                <span class="faq-item__question">How long does a typical project take?</span>
-                                <span class="faq-item__icon" aria-hidden="true"></span>
-                            </button>
-                        </h3>
-                        <div
-                            class="faq-item__answer"
-                            id="faq-answer-2"
-                            role="region"
-                            aria-labelledby="faq-question-2"
-                        >
-                            <p>Project timelines vary based on scope and complexity. A standard website typically takes 4-6 weeks, while custom applications may take 3-6 months. We provide a detailed timeline during the proposal phase.</p>
-                        </div>
-                    </article>
-                    <article class="faq-item" role="listitem">
-                        <h3>
-                            <button
-                                class="faq-item__toggle"
-                                aria-expanded="false"
-                                aria-controls="faq-answer-3"
-                                id="faq-question-3"
-                            >
-                                <span class="faq-item__question">Do you offer custom software development?</span>
-                                <span class="faq-item__icon" aria-hidden="true"></span>
-                            </button>
-                        </h3>
-                        <div
-                            class="faq-item__answer"
-                            id="faq-answer-3"
-                            role="region"
-                            aria-labelledby="faq-question-3"
-                        >
-                            <p>Yes, we specialize in custom software development tailored to your specific requirements. Our team works closely with you to understand your workflows and build solutions that integrate seamlessly with your existing systems.</p>
-                        </div>
-                    </article>
-                    <article class="faq-item" role="listitem">
-                        <h3>
-                            <button
-                                class="faq-item__toggle"
-                                aria-expanded="false"
-                                aria-controls="faq-answer-4"
-                                id="faq-question-4"
-                            >
-                                <span class="faq-item__question">Can I upgrade my pricing plan later?</span>
-                                <span class="faq-item__icon" aria-hidden="true"></span>
-                            </button>
-                        </h3>
-                        <div
-                            class="faq-item__answer"
-                            id="faq-answer-4"
-                            role="region"
-                            aria-labelledby="faq-question-4"
-                        >
-                            <p>Absolutely. You can upgrade your plan at any time as your business grows. We'll prorate the remaining balance on your current plan and apply it toward the new tier, so you only pay the difference.</p>
-                        </div>
-                    </article>
-                    <article class="faq-item" role="listitem">
-                        <h3>
-                            <button
-                                class="faq-item__toggle"
-                                aria-expanded="false"
-                                aria-controls="faq-answer-5"
-                                id="faq-question-5"
-                            >
-                                <span class="faq-item__question">Do you provide ongoing support?</span>
-                                <span class="faq-item__icon" aria-hidden="true"></span>
-                            </button>
-                        </h3>
-                        <div
-                            class="faq-item__answer"
-                            id="faq-answer-5"
-                            role="region"
-                            aria-labelledby="faq-question-5"
-                        >
-                            <p>We offer comprehensive post-launch support including maintenance plans, performance monitoring, security updates, and feature enhancements. Our support team is available via email, phone, and live chat during business hours.</p>
-                        </div>
-                    </article>
-                </div>
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <span class="section__label">Pricing</span>
+            <h2 class="section__title">Simple, Transparent Pricing</h2>
+            <p class="section__desc">Choose the perfect plan for your business growth.</p>
+            <div class="cards-grid cards-grid--3">
+                <article class="glass-card pricing-card" data-reveal>
+                    <h3 class="pricing-card__name">Starter</h3>
+                    <p class="pricing-card__desc">Perfect for small projects and individuals.</p>
+                    <div class="pricing-card__price"><span class="pricing-card__currency">$</span><span class="pricing-card__amount">29</span><span class="pricing-card__period">/month</span></div>
+                    <ul class="pricing-card__features">
+                        <li>&#10003; 5 Projects</li>
+                        <li>&#10003; Email Support</li>
+                        <li>&#10003; Basic Analytics</li>
+                        <li>&#10003; Cloud Storage</li>
+                        <li>&#10003; Community Access</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--glass pricing-card__cta">Get Started</a>
+                </article>
+                <article class="glass-card pricing-card pricing-card--featured" data-reveal>
+                    <div class="pricing-card__badge">Most Popular</div>
+                    <h3 class="pricing-card__name">Professional</h3>
+                    <p class="pricing-card__desc">Best for growing teams and businesses.</p>
+                    <div class="pricing-card__price"><span class="pricing-card__currency">$</span><span class="pricing-card__amount">79</span><span class="pricing-card__period">/month</span></div>
+                    <ul class="pricing-card__features">
+                        <li>&#10003; Unlimited Projects</li>
+                        <li>&#10003; Priority Support</li>
+                        <li>&#10003; Advanced Analytics</li>
+                        <li>&#10003; AI Automation</li>
+                        <li>&#10003; Team Collaboration</li>
+                        <li>&#10003; API Access</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary pricing-card__cta">Start Free Trial</a>
+                </article>
+                <article class="glass-card pricing-card" data-reveal>
+                    <h3 class="pricing-card__name">Enterprise</h3>
+                    <p class="pricing-card__desc">For large organizations with custom needs.</p>
+                    <div class="pricing-card__price"><span class="pricing-card__amount pricing-card__amount--custom">Custom</span></div>
+                    <ul class="pricing-card__features">
+                        <li>&#10003; Everything in Professional</li>
+                        <li>&#10003; Dedicated Account Manager</li>
+                        <li>&#10003; Custom Integrations</li>
+                        <li>&#10003; Enterprise Security</li>
+                        <li>&#10003; SLA Support</li>
+                        <li>&#10003; Unlimited Team Members</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--glass pricing-card__cta">Contact Sales</a>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact -->
-        <section id="contact" class="contact" aria-labelledby="contact-heading" data-reveal="fade-up">
-            <div class="container contact__container">
-                <!-- Left Column: Contact Form -->
-                <div class="contact__form-wrapper">
-                    <h2 id="contact-heading" class="section__title">Let's Build Something Amazing Together</h2>
-                    <p class="section__subtitle">Tell us about your project and our team will contact you within 24 hours.</p>
+    <!-- FAQ -->
+    <section id="faq" class="section">
+        <div class="container">
+            <span class="section__label">FAQ</span>
+            <h2 class="section__title">Frequently Asked Questions</h2>
+            <p class="section__desc">Everything you need to know before working with Velora.</p>
+            <div class="faq__list">
+                <article class="faq-item">
+                    <button class="faq-item__toggle" aria-expanded="false" aria-controls="faq-1" id="faq-q-1">
+                        <span>What services does Velora provide?</span>
+                        <span class="faq-item__icon"></span>
+                    </button>
+                    <div class="faq-item__answer" id="faq-1" role="region" aria-labelledby="faq-q-1">
+                        <p>Velora offers end-to-end digital solutions including web development, mobile app development, UI/UX design, digital marketing, cloud infrastructure, and AI integration.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-item__toggle" aria-expanded="false" aria-controls="faq-2" id="faq-q-2">
+                        <span>How long does a typical project take?</span>
+                        <span class="faq-item__icon"></span>
+                    </button>
+                    <div class="faq-item__answer" id="faq-2" role="region" aria-labelledby="faq-q-2">
+                        <p>Project timelines vary based on scope and complexity. A standard website typically takes 4-6 weeks, while custom applications may take 3-6 months.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-item__toggle" aria-expanded="false" aria-controls="faq-3" id="faq-q-3">
+                        <span>Do you offer custom software development?</span>
+                        <span class="faq-item__icon"></span>
+                    </button>
+                    <div class="faq-item__answer" id="faq-3" role="region" aria-labelledby="faq-q-3">
+                        <p>Yes, we specialize in custom software development tailored to your specific requirements. Our team works closely with you to understand your workflows and build solutions that integrate seamlessly.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-item__toggle" aria-expanded="false" aria-controls="faq-4" id="faq-q-4">
+                        <span>Can I upgrade my pricing plan later?</span>
+                        <span class="faq-item__icon"></span>
+                    </button>
+                    <div class="faq-item__answer" id="faq-4" role="region" aria-labelledby="faq-q-4">
+                        <p>Absolutely. You can upgrade your plan at any time as your business grows. We'll prorate the remaining balance on your current plan and apply it toward the new tier.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-item__toggle" aria-expanded="false" aria-controls="faq-5" id="faq-q-5">
+                        <span>Do you provide ongoing support?</span>
+                        <span class="faq-item__icon"></span>
+                    </button>
+                    <div class="faq-item__answer" id="faq-5" role="region" aria-labelledby="faq-q-5">
+                        <p>We offer comprehensive post-launch support including maintenance plans, performance monitoring, security updates, and feature enhancements.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <span class="section__label">Contact</span>
+            <h2 class="section__title">Let's Build Something Amazing Together</h2>
+            <p class="section__desc">Tell us about your project and our team will contact you within 24 hours.</p>
+            <div class="contact__grid">
+                <div class="contact__form-wrap" data-reveal="fade-right">
                     <form id="contact-form" class="contact__form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="contact-name" class="form-label">Full Name <span class="form-label__required" aria-hidden="true">*</span></label>
-                                <input
-                                    type="text"
-                                    id="contact-name"
-                                    name="name"
-                                    class="form-input"
-                                    placeholder="John Doe"
-                                    required
-                                    autocomplete="name"
-                                    aria-required="true"
-                                >
-                                <span class="form-error" role="alert" aria-live="polite"></span>
+                                <label class="form-label" for="contact-name">Full Name <span>*</span></label>
+                                <input type="text" id="contact-name" name="name" class="form-input" placeholder="John Doe" required autocomplete="name">
+                                <span class="form-error" role="alert"></span>
                             </div>
                             <div class="form-group">
-                                <label for="contact-email" class="form-label">Email Address <span class="form-label__required" aria-hidden="true">*</span></label>
-                                <input
-                                    type="email"
-                                    id="contact-email"
-                                    name="email"
-                                    class="form-input"
-                                    placeholder="john@company.com"
-                                    required
-                                    autocomplete="email"
-                                    aria-required="true"
-                                >
-                                <span class="form-error" role="alert" aria-live="polite"></span>
+                                <label class="form-label" for="contact-email">Email Address <span>*</span></label>
+                                <input type="email" id="contact-email" name="email" class="form-input" placeholder="john@company.com" required autocomplete="email">
+                                <span class="form-error" role="alert"></span>
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="contact-phone" class="form-label">Phone Number</label>
-                                <input
-                                    type="tel"
-                                    id="contact-phone"
-                                    name="phone"
-                                    class="form-input"
-                                    placeholder="+1 (555) 123-4567"
-                                    autocomplete="tel"
-                                >
-                                <span class="form-error" role="alert" aria-live="polite"></span>
+                                <label class="form-label" for="contact-phone">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="+91 98765 43210" autocomplete="tel">
+                                <span class="form-error" role="alert"></span>
                             </div>
                             <div class="form-group">
-                                <label for="contact-company" class="form-label">Company Name</label>
-                                <input
-                                    type="text"
-                                    id="contact-company"
-                                    name="company"
-                                    class="form-input"
-                                    placeholder="Acme Inc."
-                                    autocomplete="organization"
-                                >
+                                <label class="form-label" for="contact-company">Company Name</label>
+                                <input type="text" id="contact-company" name="company" class="form-input" placeholder="Acme Inc." autocomplete="organization">
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="contact-service" class="form-label">Service Required <span class="form-label__required" aria-hidden="true">*</span></label>
-                            <select
-                                id="contact-service"
-                                name="service"
-                                class="form-input form-select"
-                                required
-                                aria-required="true"
-                            >
+                            <label class="form-label" for="contact-service">Service Required <span>*</span></label>
+                            <select id="contact-service" name="service" class="form-input" required>
                                 <option value="" disabled selected>Select a service</option>
                                 <option value="web-development">Web Development</option>
                                 <option value="mobile-app">Mobile App Development</option>
@@ -988,188 +481,214 @@
                                 <option value="ai-integration">AI Integration</option>
                                 <option value="other">Other</option>
                             </select>
-                            <span class="form-error" role="alert" aria-live="polite"></span>
+                            <span class="form-error" role="alert"></span>
                         </div>
-
                         <div class="form-group">
-                            <label for="contact-message" class="form-label">Message <span class="form-label__required" aria-hidden="true">*</span></label>
-                            <textarea
-                                id="contact-message"
-                                name="message"
-                                class="form-input form-textarea"
-                                rows="5"
-                                placeholder="Tell us about your project, goals, and timeline..."
-                                required
-                                aria-required="true"
-                            ></textarea>
-                            <span class="form-error" role="alert" aria-live="polite"></span>
+                            <label class="form-label" for="contact-message">Message <span>*</span></label>
+                            <textarea id="contact-message" name="message" class="form-input" rows="4" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+                            <span class="form-error" role="alert"></span>
                         </div>
-
                         <button type="submit" class="btn btn--primary contact__submit">
                             <span class="contact__submit-text">Send Message</span>
-                            <span class="contact__submit-icon" aria-hidden="true">&#10148;</span>
+                            <span class="contact__submit-icon">&#10148;</span>
                         </button>
-
                         <div id="form-status" class="contact__status" role="status" aria-live="polite"></div>
                     </form>
                 </div>
-
-                <!-- Right Column: Contact Info -->
-                <aside class="contact__info">
-                    <div class="contact__info-cards">
-                        <div class="contact-card">
-                            <div class="contact-card__icon" aria-hidden="true">&#128205;</div>
-                            <div class="contact-card__content">
-                                <h3 class="contact-card__title">Office Address</h3>
-                                <p class="contact-card__text">123 Innovation Drive, Suite 400<br>San Francisco, CA 94105</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card__icon" aria-hidden="true">&#128222;</div>
-                            <div class="contact-card__content">
-                                <h3 class="contact-card__title">Phone Number</h3>
-                                <p class="contact-card__text">+1 (555) 123-4567<br>+1 (555) 987-6543</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card__icon" aria-hidden="true">&#9993;</div>
-                            <div class="contact-card__content">
-                                <h3 class="contact-card__title">Email</h3>
-                                <p class="contact-card__text">info@novatech.com<br>support@novatech.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-card__icon" aria-hidden="true">&#128336;</div>
-                            <div class="contact-card__content">
-                                <h3 class="contact-card__title">Working Hours</h3>
-                                <p class="contact-card__text">Mon - Fri: 9:00 AM - 6:00 PM<br>Weekend: Emergency Only</p>
-                            </div>
+                <aside class="contact__info" data-reveal="fade-left">
+                    <div class="contact__card">
+                        <div class="contact__card-icon">&#128205;</div>
+                        <div>
+                            <h4>Office Address</h4>
+                            <p>Ahmedabad, Gujarat, India</p>
+                            <span class="contact__card-badge">Remote First &bull; Serving Clients Worldwide &#127758;</span>
                         </div>
                     </div>
-
+                    <div class="contact__card">
+                        <div class="contact__card-icon">&#128222;</div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p><a href="tel:+919876543210">+91 98765 43210</a><br><a href="tel:+919012345678">+91 90123 45678</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__card">
+                        <div class="contact__card-icon">&#9993;</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:unnati@velora.com">unnati@velora.com</a><br><a href="mailto:hello@velora.com">hello@velora.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__card">
+                        <div class="contact__card-icon">&#128336;</div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday &ndash; Saturday<br>9:00 AM &ndash; 8:00 PM IST</p>
+                            <p class="contact__card-note">Sunday: Emergency Support Only</p>
+                        </div>
+                    </div>
                     <div class="contact__social">
-                        <h3 class="contact__social-title">Follow Us</h3>
-                        <div class="contact__social-links">
-                            <a href="#" class="contact__social-link" aria-label="LinkedIn">
-                                <span class="contact__social-icon" aria-hidden="true">in</span>
-                            </a>
-                            <a href="#" class="contact__social-link" aria-label="GitHub">
-                                <span class="contact__social-icon" aria-hidden="true">GH</span>
-                            </a>
-                            <a href="#" class="contact__social-link" aria-label="Twitter">
-                                <span class="contact__social-icon" aria-hidden="true">TW</span>
-                            </a>
-                            <a href="#" class="contact__social-link" aria-label="Instagram">
-                                <span class="contact__social-icon" aria-hidden="true">IG</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="contact__map" aria-label="Office location map">
-                        <div class="contact__map-placeholder">
-                            <span class="contact__map-icon" aria-hidden="true">&#128506;</span>
-                            <span class="contact__map-text">Map Placeholder</span>
-                            <span class="contact__map-subtext">San Francisco, CA</span>
-                        </div>
+                        <a href="#" class="contact__social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" class="contact__social-link" aria-label="GitHub">GH</a>
+                        <a href="#" class="contact__social-link" aria-label="Twitter">TW</a>
+                        <a href="#" class="contact__social-link" aria-label="Instagram">IG</a>
                     </div>
                 </aside>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-section__glow" aria-hidden="true"></div>
+        <canvas class="cta-section__particles" aria-hidden="true"></canvas>
+        <div class="container">
+            <div class="cta-section__content">
+                <h2 class="cta-section__title">Ready to Transform Your Business?</h2>
+                <p class="cta-section__desc">Let's build scalable AI-powered solutions together.</p>
+                <div class="cta-section__btns">
+                    <a href="#contact" class="btn btn--primary">Get Started <span>&rarr;</span></a>
+                    <a href="#contact" class="btn btn--glass">Book Free Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer id="footer" class="footer" role="contentinfo">
+    <footer class="footer">
+        <div class="footer__glow" aria-hidden="true"></div>
+        <canvas class="footer__particles" aria-hidden="true"></canvas>
+        <div class="footer__gradient-divider"></div>
         <div class="container">
+            <div class="footer__logos">
+                <p class="footer__logos-label">Trusted by innovative companies worldwide</p>
+                <div class="footer__logos-track">
+                    <div class="footer__logo-item">Google</div>
+                    <div class="footer__logo-item">Microsoft</div>
+                    <div class="footer__logo-item">Spotify</div>
+                    <div class="footer__logo-item">Slack</div>
+                    <div class="footer__logo-item">Adobe</div>
+                    <div class="footer__logo-item">Netflix</div>
+                </div>
+            </div>
             <div class="footer__grid">
-                <!-- Column 1: Brand -->
                 <div class="footer__brand">
-                    <a href="#hero" class="footer__logo" aria-label="NovaTech - Back to top">
-                        <span class="footer__logo-text">NovaTech</span>
-                    </a>
-                    <p class="footer__description">Empowering businesses with innovative digital solutions. We build technology that drives growth, efficiency, and lasting success.</p>
+                    <a href="#hero" class="footer__logo">Velora</a>
+                    <p class="footer__text">Empowering businesses with intelligent AI automation and scalable digital solutions. We build technology that drives growth, efficiency, and lasting success.</p>
+                    <div class="footer__rating">
+                        <div class="footer__stars">
+                            <span>&#11088;</span><span>&#11088;</span><span>&#11088;</span><span>&#11088;</span><span>&#11088;</span>
+                        </div>
+                        <span class="footer__rating-text">4.9/5 from 200+ reviews</span>
+                    </div>
                     <div class="footer__social">
                         <a href="#" class="footer__social-link" aria-label="LinkedIn">
-                            <span class="footer__social-icon" aria-hidden="true">in</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         </a>
                         <a href="#" class="footer__social-link" aria-label="GitHub">
-                            <span class="footer__social-icon" aria-hidden="true">GH</span>
-                        </a>
-                        <a href="#" class="footer__social-link" aria-label="Instagram">
-                            <span class="footer__social-icon" aria-hidden="true">IG</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         </a>
                         <a href="#" class="footer__social-link" aria-label="Twitter">
-                            <span class="footer__social-icon" aria-hidden="true">TW</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                         </a>
-                        <a href="#" class="footer__social-link" aria-label="Facebook">
-                            <span class="footer__social-icon" aria-hidden="true">FB</span>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
                     </div>
                 </div>
-
-                <!-- Column 2: Quick Links -->
-                <nav class="footer__nav" aria-label="Quick links">
-                    <h3 class="footer__heading">Quick Links</h3>
-                    <ul class="footer__links">
-                        <li><a href="#hero" class="footer__link">Home</a></li>
-                        <li><a href="#about" class="footer__link">About</a></li>
-                        <li><a href="#services" class="footer__link">Services</a></li>
-                        <li><a href="#pricing" class="footer__link">Pricing</a></li>
-                        <li><a href="#contact" class="footer__link">Contact</a></li>
-                    </ul>
+                <nav class="footer__nav" aria-label="Company links">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">Careers</a>
                 </nav>
-
-                <!-- Column 3: Services -->
-                <nav class="footer__nav" aria-label="Services links">
-                    <h3 class="footer__heading">Services</h3>
-                    <ul class="footer__links">
-                        <li><a href="#services" class="footer__link">Web Development</a></li>
-                        <li><a href="#services" class="footer__link">Mobile Apps</a></li>
-                        <li><a href="#services" class="footer__link">AI Automation</a></li>
-                        <li><a href="#services" class="footer__link">Cloud Solutions</a></li>
-                        <li><a href="#services" class="footer__link">UI/UX Design</a></li>
-                    </ul>
+                <nav class="footer__nav" aria-label="Solutions links">
+                    <h4>Solutions</h4>
+                    <a href="#services">Web Development</a>
+                    <a href="#services">Mobile Apps</a>
+                    <a href="#services">AI Automation</a>
+                    <a href="#services">Cloud Solutions</a>
+                    <a href="#services">UI/UX Design</a>
                 </nav>
-
-                <!-- Column 4: Newsletter -->
+                <nav class="footer__nav" aria-label="Resources links">
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">API Reference</a>
+                </nav>
                 <div class="footer__newsletter">
-                    <h3 class="footer__heading">Stay Updated</h3>
-                    <p class="footer__newsletter-text">Subscribe to our newsletter for the latest insights, tips, and industry trends.</p>
+                    <h4>Stay Updated</h4>
+                    <p>Get the latest insights, tutorials, and industry trends delivered to your inbox.</p>
                     <form id="newsletter-form" class="footer__newsletter-form" novalidate>
-                        <div class="footer__newsletter-input-wrapper">
-                            <input
-                                type="email"
-                                id="newsletter-email"
-                                class="footer__newsletter-input"
-                                placeholder="Enter your email"
-                                required
-                                aria-label="Email address for newsletter"
-                                aria-required="true"
-                            >
-                            <button type="submit" class="footer__newsletter-btn">
-                                <span class="footer__newsletter-btn-text">Subscribe</span>
-                                <span class="footer__newsletter-btn-icon" aria-hidden="true">&#10148;</span>
-                            </button>
-                        </div>
-                        <span id="newsletter-error" class="footer__newsletter-error" role="alert" aria-live="polite"></span>
-                        <span id="newsletter-success" class="footer__newsletter-success" role="status" aria-live="polite"></span>
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required aria-label="Email for newsletter">
+                        <button type="submit" class="footer__newsletter-btn">
+                            <span class="footer__newsletter-btn-text">Subscribe</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
                     </form>
+                    <span id="newsletter-error" class="footer__newsletter-error" role="alert"></span>
+                    <span id="newsletter-success" class="footer__newsletter-success" role="status"></span>
                 </div>
             </div>
-
-            <!-- Bottom Footer -->
             <div class="footer__bottom">
                 <div class="footer__bottom-left">
-                    <p class="footer__copyright">&copy; 2026 NovaTech. All Rights Reserved.</p>
+                    <span class="footer__copyright">&copy; 2026 Velora. All rights reserved.</span>
+                    <span class="footer__made">Made with <span class="footer__heart">&hearts;</span> by <strong>Unnati</strong></span>
                 </div>
-                <div class="footer__bottom-links">
-                    <a href="#" class="footer__bottom-link">Privacy Policy</a>
-                    <a href="#" class="footer__bottom-link">Terms &amp; Conditions</a>
+                <div class="footer__bottom-right">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- AI Assistant -->
+    <div id="ai-assistant" class="ai-assistant">
+        <button id="ai-toggle" class="ai-assistant__toggle" aria-label="Open AI assistant" aria-expanded="false">
+            <span aria-hidden="true">&#129302;</span>
+            <span class="ai-assistant__pulse"></span>
+        </button>
+        <div id="ai-chat" class="ai-assistant__chat ai-assistant__chat--closed">
+            <div class="ai-assistant__header">
+                <div class="ai-assistant__header-info">
+                    <span aria-hidden="true">&#129302;</span>
+                    <div><span class="ai-assistant__name">Velora AI</span><span class="ai-assistant__status">Online</span></div>
+                </div>
+                <button id="ai-minimize" class="ai-assistant__minimize" aria-label="Minimize chat">&#8722;</button>
+            </div>
+            <div id="ai-messages" class="ai-assistant__messages">
+                <div class="ai-assistant__message ai-assistant__message--bot">
+                    <span class="ai-assistant__message-avatar" aria-hidden="true">&#129302;</span>
+                    <div class="ai-assistant__message-content"><p>&#128075; Hello! I'm Velora AI. I'm here to help you explore our services, pricing, projects and answer your questions. How can I help you today?</p></div>
+                </div>
+            </div>
+            <div class="ai-assistant__suggestions">
+                <button class="ai-assistant__suggestion" data-question="What services do you offer?">What services do you offer?</button>
+                <button class="ai-assistant__suggestion" data-question="How much does it cost?">Pricing info</button>
+                <button class="ai-assistant__suggestion" data-question="How can I contact you?">Contact details</button>
+            </div>
+            <form id="ai-form" class="ai-assistant__form">
+                <input type="text" id="ai-input" class="ai-assistant__input" placeholder="Ask Velora AI..." aria-label="Type your message">
+                <button type="submit" class="ai-assistant__send" aria-label="Send message">&#10148;</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <span aria-hidden="true">&#8593;</span>
+    </button>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
-# Robots.txt for NovaTech Landing Page
-# https://novatech.com
+# Robots.txt for Velora Landing Page
+# https://velora.com
 
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://novatech.com/sitemap.xml
+Sitemap: https://velora.com/sitemap.xml
 
 # Disallow admin areas (if any)
 Disallow: /admin/

@@ -1,12 +1,12 @@
-# NovaTech - AI-Powered Business Solutions
+# Velora - AI-Powered Business Solutions
 
 A premium, responsive SaaS landing page built with semantic HTML, CSS, and vanilla JavaScript. Features dark mode, smooth animations, accessibility-first design, and zero dependencies.
 
-![NovaTech Landing Page](images/og-image.png)
+![Velora Landing Page](images/og-image.png)
 
 ## Live Demo
 
-[View Live Demo](https://novatech-demo.netlify.app/)
+[View Live Demo](https://velora-demo.netlify.app/)
 
 ## Screenshots
 
@@ -134,11 +134,11 @@ Simply open the `index.html` file in any modern web browser. No build process re
 
 ## Author
 
-**Your Name**
+**Unnati**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourname)
-- Email: your.email@example.com
+- GitHub: [@unnati](https://github.com/unnati)
+- LinkedIn: [Unnati](https://linkedin.com/in/unnati)
+- Email: unnati@velora.com
 
 ## License
 
