@@ -1,151 +1,285 @@
-# Velora - AI-Powered Business Solutions
+<div align="center">
 
-A premium, responsive SaaS landing page built with semantic HTML, CSS, and vanilla JavaScript. Features dark mode, smooth animations, accessibility-first design, and zero dependencies.
+# 🚀 Velora - Modern Business Landing Page
 
-![Velora Landing Page](images/og-image.png)
+### AI-Powered Business Solutions • Modern SaaS Landing Page
 
-## Live Demo
+<p align="center">
 
-[View Live Demo](https://velora-demo.netlify.app/)
+A premium, fully responsive business landing page built using **HTML**, **CSS**, and **JavaScript** featuring modern UI/UX, AI chatbot, EmailJS integration, dark mode, and premium animations.
 
-## Screenshots
+</p>
 
-| Desktop | Tablet | Mobile |
-|---------|--------|--------|
-| ![Desktop](screenshots/desktop.png) | ![Tablet](screenshots/tablet.png) | ![Mobile](screenshots/mobile.png) |
+<p align="center">
 
-## Features
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![EmailJS](https://img.shields.io/badge/EmailJS-FFB000?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge)
+![Dark Mode](https://img.shields.io/badge/Dark_Mode-Enabled-blueviolet?style=for-the-badge)
 
-- **Dark Mode** - Toggle between light and dark themes with localStorage persistence
-- **Responsive Design** - Fully responsive across all devices (mobile, tablet, desktop)
-- **Smooth Animations** - Scroll reveal animations, ripple effects, and hover transitions
-- **Accessibility** - WCAG 2.1 compliant with ARIA labels, keyboard navigation, and skip links
-- **Performance** - Optimized for Lighthouse 95+ scores with lazy loading and efficient CSS
-- **Loading Screen** - Branded loading animation with progress bar
-- **Back to Top** - Smooth scroll-to-top button appears on scroll
-- **Form Validation** - Client-side validation with real-time error feedback
-- **Newsletter Subscription** - Email validation and success/error states
-- **SEO Optimized** - Meta tags, Open Graph, Twitter Cards, and semantic HTML
+</p>
 
-## Folder Structure
+</div>
+
+---
+
+# 🌐 Live Demo
+
+> 🚀 Coming Soon
 
 ```
-modern-business-landing-page/
-├── index.html              # Main HTML file
+https://your-vercel-link.vercel.app
+```
+
+---
+
+# 📸 Screenshots
+
+> Replace these with your screenshots.
+
+| Desktop | Mobile |
+|----------|---------|
+| Hero Section | Mobile View |
+| About | Contact |
+| Pricing | Footer |
+
+---
+
+# ✨ Features
+
+- 🎨 Premium Modern UI
+- 🌙 Dark Mode
+- 🤖 AI Chatbot
+- 📧 EmailJS Contact Form
+- 📩 Newsletter Subscription
+- 💼 Business Landing Page
+- 📱 Fully Responsive
+- 🚀 Smooth Animations
+- 🎯 SEO Friendly
+- 🔥 Glassmorphism Design
+- 💬 Interactive FAQ
+- 📊 Statistics Section
+- ⭐ Client Testimonials
+- 💳 Pricing Plans
+- 📞 Contact Section
+- 🎥 About Video Section
+- ⬆️ Back To Top Button
+- ⚡ Optimized Performance
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| HTML5 | Structure |
+| CSS3 | Styling |
+| JavaScript (ES6) | Interactivity |
+| EmailJS | Contact Form |
+| Google Fonts | Typography |
+| Font Awesome | Icons |
+| AOS / Custom Animations | Animations |
+| Git | Version Control |
+| GitHub | Repository Hosting |
+| Vercel | Deployment |
+
+---
+
+# 📂 Project Structure
+
+```
+Velora/
+│
+├── assets/
+│   ├── images/
+│   ├── videos/
+│   ├── icons/
+│
 ├── css/
-│   └── style.css           # All styles (3200+ lines)
+│   └── style.css
+│
 ├── js/
-│   └── script.js           # All JavaScript modules (860+ lines)
-├── images/                 # Image assets
-│   ├── favicon.svg         # SVG favicon
-│   ├── hero-dashboard.png  # Hero section image
-│   ├── client-sarah.png    # Testimonial avatar
-│   ├── client-michael.png  # Testimonial avatar
-│   └── client-emily.png    # Testimonial avatar
-├── screenshots/            # Project screenshots
-├── .gitignore             # Git ignore rules
-└── README.md              # This file
+│   └── script.js
+│
+├── index.html
+├── README.md
+└── LICENSE
 ```
 
-## Tech Stack
+---
 
-- **HTML5** - Semantic markup with ARIA attributes
-- **CSS3** - Custom properties, Grid, Flexbox, animations
-- **JavaScript (ES6+)** - Vanilla JS with modular architecture
-- **No Dependencies** - Zero external libraries or frameworks
+# 🚀 Getting Started
 
-## Installation
+Clone the repository
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/modern-business-landing-page.git
-   ```
+```bash
+git clone https://github.com/USERNAME/REPOSITORY.git
+```
 
-2. Navigate to the project directory:
-   ```bash
-   cd modern-business-landing-page
-   ```
+Go to project
 
-3. Open `index.html` in your browser or use a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
+```bash
+cd REPOSITORY
+```
 
-   # Using Node.js
-   npx serve
-   ```
+Run
 
-## Usage
+```bash
+Open index.html
+```
 
-Simply open the `index.html` file in any modern web browser. No build process required.
+Or use
 
-### Features
+```bash
+Live Server
+```
 
-- **Navigation**: Click any nav link to smooth scroll to that section
-- **Dark Mode**: Click the sun/moon icon in the navbar to toggle themes
-- **Mobile Menu**: Click the hamburger icon on mobile devices
-- **Contact Form**: Fill out the form with validation feedback
-- **Newsletter**: Subscribe to the newsletter in the footer
+---
 
-## Deployment
+# 📧 EmailJS Setup
 
-### GitHub Pages
+Create an EmailJS account
 
-1. Push your code to GitHub
-2. Go to Settings > Pages
-3. Select source branch (main)
-4. Your site will be at `https://username.github.io/repo-name`
+Replace
 
-### Vercel
+```javascript
+PUBLIC_KEY
 
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in the project directory
-3. Follow the prompts
+SERVICE_ID
 
-### Netlify
+TEMPLATE_ID
+```
 
-1. Drag and drop the project folder to Netlify
-2. Or connect your GitHub repository
-3. Deploy settings: Build command (leave empty), Publish directory (`.`)
+inside
 
-## Browser Support
+```
+js/script.js
+```
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+---
 
-## Performance
+# 🎯 Core Modules
 
-- **Lighthouse Performance**: 95+
-- **Lighthouse Accessibility**: 100
-- **Lighthouse Best Practices**: 100
-- **Lighthouse SEO**: 100
+✅ Hero Section
 
-## Future Improvements
+✅ Responsive Navbar
 
-- [ ] Add page transition animations
-- [ ] Implement a blog section
-- [ ] Add multi-language support (i18n)
-- [ ] Integrate with a CMS (Contentful, Strapi)
-- [ ] Add analytics tracking
-- [ ] Implement PWA features
-- [ ] Add more interactive elements
+✅ About Section
 
-## Author
+✅ Services
+
+✅ Why Choose Us
+
+✅ Statistics
+
+✅ Testimonials
+
+✅ Pricing
+
+✅ FAQ
+
+✅ Contact Form
+
+✅ Newsletter
+
+✅ Footer
+
+✅ AI Assistant
+
+✅ Dark Mode
+
+---
+
+# 📱 Responsive Design
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+---
+
+# ⚡ Performance
+
+- Lazy Loading
+- Optimized Assets
+- Responsive Images
+- Clean Code
+- Modern CSS
+- Smooth Animations
+
+---
+
+# 🤖 AI Assistant
+
+The project includes a custom AI Assistant capable of:
+
+- Answering business queries
+- Service recommendations
+- Pricing guidance
+- Navigation help
+
+---
+
+# 📬 Contact
+
+Email
+
+```
+unnati@velora.com
+```
+
+```
+hello@velora.com
+```
+
+---
+
+# 🌟 Future Improvements
+
+- Authentication
+- Admin Dashboard
+- CMS Integration
+- Blog Section
+- Multi-language Support
+- Analytics Dashboard
+- Payment Gateway
+- Live Chat Integration
+
+---
+
+# 👩‍💻 Developed By
 
 **Unnati**
 
-- GitHub: [@unnati](https://github.com/unnati)
-- LinkedIn: [Unnati](https://linkedin.com/in/unnati)
-- Email: unnati@velora.com
+---
 
-## License
+# 🤝 Contributing
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Contributions are welcome.
 
-## Acknowledgments
+Fork the project.
 
-- Design inspired by modern SaaS landing pages
-- Built as a portfolio project demonstrating frontend development skills
-- Special thanks to the open-source community
+Create your feature branch.
+
+Commit your changes.
+
+Open a Pull Request.
+
+---
+
+# ⭐ Support
+
+If you like this project
+
+Give it a ⭐ on GitHub.
+
+---
+
+<div align="center">
+
+Made with ❤️ using HTML, CSS & JavaScript
+
+</div>
