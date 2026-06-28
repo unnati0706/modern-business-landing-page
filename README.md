@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🚀 Velora - Modern Business Landing Page
+# 🚀 Velora - Modern AI Business Landing Page
 
-### AI-Powered Business Solutions • Modern SaaS Landing Page
+### Premium SaaS Business Landing Page with AI Chatbot
 
 <p align="center">
 
-A premium, fully responsive business landing page built using **HTML**, **CSS**, and **JavaScript** featuring modern UI/UX, AI chatbot, EmailJS integration, dark mode, and premium animations.
+A modern, responsive, and premium business landing page built using **HTML**, **CSS**, and **JavaScript**. Velora is designed to showcase AI-powered business solutions with an elegant UI, interactive chatbot, EmailJS integration, dark mode, smooth animations, and a fully responsive experience.
 
 </p>
 
@@ -27,62 +27,88 @@ A premium, fully responsive business landing page built using **HTML**, **CSS**,
 
 # 🌐 Live Demo
 
-> 🚀 Coming Soon
+🚀 Coming Soon
 
-```
-https://your-vercel-link.vercel.app
-```
+Deployment will be available soon on Vercel.
 
 ---
 
-# 📸 Screenshots
+# 📂 GitHub Repository
 
-> Replace these with your screenshots.
+https://github.com/unnati0706/modern-business-landing-page
 
-| Desktop | Mobile |
-|----------|---------|
-| Hero Section | Mobile View |
-| About | Contact |
-| Pricing | Footer |
+---
+
+# 📸 Project Preview
+
+## Hero Section
+
+- Modern SaaS Landing Page
+- Glassmorphism Navigation
+- Animated Background
+- AI Powered Branding
+
+## About
+
+- Interactive Video Preview
+- Company Overview
+- Experience Statistics
+
+## Contact
+
+- EmailJS Integration
+- Professional Contact Cards
+- Responsive Contact Form
+
+## AI Assistant
+
+- Interactive Business Chatbot
+- Quick Reply Suggestions
+- Service & Pricing Guidance
+
+## Footer
+
+- Newsletter Subscription
+- Company Links
+- Social Media
+- Modern SaaS Footer
 
 ---
 
 # ✨ Features
 
-- 🎨 Premium Modern UI
+- 🎨 Modern SaaS UI
 - 🌙 Dark Mode
-- 🤖 AI Chatbot
+- 🤖 AI Business Assistant
 - 📧 EmailJS Contact Form
 - 📩 Newsletter Subscription
-- 💼 Business Landing Page
 - 📱 Fully Responsive
 - 🚀 Smooth Animations
-- 🎯 SEO Friendly
-- 🔥 Glassmorphism Design
-- 💬 Interactive FAQ
-- 📊 Statistics Section
-- ⭐ Client Testimonials
-- 💳 Pricing Plans
-- 📞 Contact Section
+- 💼 Business Landing Page
 - 🎥 About Video Section
-- ⬆️ Back To Top Button
+- ⭐ Testimonials
+- 💳 Pricing Section
+- ❓ Interactive FAQ
+- 📊 Statistics Cards
+- 🔝 Scroll To Top Button
+- 🎯 SEO Friendly
 - ⚡ Optimized Performance
+- 🪟 Glassmorphism Design
 
 ---
 
 # 🛠 Tech Stack
 
-| Technology | Purpose |
-|------------|----------|
-| HTML5 | Structure |
-| CSS3 | Styling |
-| JavaScript (ES6) | Interactivity |
+| Technology | Usage |
+|------------|-------|
+| HTML5 | Website Structure |
+| CSS3 | Styling & Layout |
+| JavaScript (ES6) | Functionality |
 | EmailJS | Contact Form |
 | Google Fonts | Typography |
 | Font Awesome | Icons |
-| AOS / Custom Animations | Animations |
 | Git | Version Control |
-| GitHub | Repository Hosting |
+| GitHub | Source Code Hosting |
 | Vercel | Deployment |
 
 ---
@@ -90,22 +116,21 @@ https://your-vercel-link.vercel.app
 # 📂 Project Structure
 
 ```
-Velora/
-│
-├── assets/
-│   ├── images/
-│   ├── videos/
-│   ├── icons/
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-├── index.html
-├── README.md
-└── LICENSE
+modern-business-landing-page/
+
+│── assets/
+│ ├── images/
+│ ├── videos/
+│ └── icons/
+
+│── css/
+│ └── style.css
+
+│── js/
+│ └── script.js
+
+│── index.html
+│── README.md
 ```
 
 ---
@@ -115,34 +140,30 @@ Velora/
 Clone the repository
 
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY.git
+git clone https://github.com/unnati0706/modern-business-landing-page.git
 ```
 
 Go to project
 
 ```bash
-cd REPOSITORY
+cd modern-business-landing-page
 ```
 
-Run
+Open
 
 ```bash
-Open index.html
+index.html
 ```
 
-Or use
-
-```bash
-Live Server
-```
+or use Live Server.
 
 ---
 
-# 📧 EmailJS Setup
+# 📧 EmailJS Configuration
 
-Create an EmailJS account
+Create an EmailJS account.
 
-Replace
+Replace the following inside **script.js**
 
 ```javascript
 PUBLIC_KEY
@@ -152,47 +173,25 @@ SERVICE_ID
 TEMPLATE_ID
 ```
 
-inside
-
-```
-js/script.js
-```
+with your own EmailJS credentials.
 
 ---
 
-# 🎯 Core Modules
+# 🤖 AI Chatbot
 
-✅ Hero Section
+Velora AI can assist users with:
 
-✅ Responsive Navbar
-
-✅ About Section
-
-✅ Services
-
-✅ Why Choose Us
-
-✅ Statistics
-
-✅ Testimonials
-
-✅ Pricing
-
-✅ FAQ
-
-✅ Contact Form
-
-✅ Newsletter
-
-✅ Footer
-
-✅ AI Assistant
-
-✅ Dark Mode
+- Business Services
+- Pricing Plans
+- Company Information
+- Contact Details
+- Navigation Assistance
 
 ---
 
 # 📱 Responsive Design
+
+Optimized for
 
 - Desktop
 - Laptop
@@ -203,50 +202,25 @@ js/script.js
 
 # ⚡ Performance
 
-- Lazy Loading
-- Optimized Assets
-- Responsive Images
 - Clean Code
+- Lightweight
+- Fast Loading
+- Responsive Images
 - Modern CSS
-- Smooth Animations
+- Smooth Scrolling
 
 ---
 
-# 🤖 AI Assistant
-
-The project includes a custom AI Assistant capable of:
-
-- Answering business queries
-- Service recommendations
-- Pricing guidance
-- Navigation help
-
----
-
-# 📬 Contact
-
-Email
-
-```
-unnati@velora.com
-```
-
-```
-hello@velora.com
-```
-
----
-
-# 🌟 Future Improvements
+# 🎯 Future Improvements
 
 - Authentication
 - Admin Dashboard
+- Blog System
 - CMS Integration
-- Blog Section
-- Multi-language Support
 - Analytics Dashboard
+- Multi-language Support
 - Payment Gateway
-- Live Chat Integration
+- Live Chat Support
 
 ---
 
@@ -260,26 +234,22 @@ hello@velora.com
 
 Contributions are welcome.
 
-Fork the project.
-
-Create your feature branch.
-
-Commit your changes.
-
-Open a Pull Request.
+1. Fork this repository
+2. Create your feature branch
+3. Commit your changes
+4. Push your branch
+5. Create a Pull Request
 
 ---
 
 # ⭐ Support
 
-If you like this project
-
-Give it a ⭐ on GitHub.
+If you like this project, don't forget to ⭐ the repository.
 
 ---
 
 <div align="center">
 
-Made with ❤️ using HTML, CSS & JavaScript
+Made with ❤️ by **Unnati**
 
 </div>
